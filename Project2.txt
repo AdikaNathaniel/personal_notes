@@ -1,0 +1,38 @@
+Topic :Building & Deploying an Amazing 3D Portfolio
+             DimensionS
+1.Zeroth Dimension:Just a single point.
+2.First Dimension:A straight line
+3.Second Dimension:A shape of length and breadth.Eg 2D games like Super mario and Street Fighter or a paper.
+4.Third Dimension:A space of length,width and height.Eg Humans
+5.Fourth Dimension:A combination of space and time.Eg is video games
+6.Three.js is a javascript framework for making 3D graphics for web development on top of WebGL.
+7.Renderer takes the 3D Scene,the environment,the objects and lightning and processes everything to 
+be viewed on a 2D screen.
+(a)Scene.........This defines the space where everything happens
+(b)Camera........This determines the perspective of the scene
+(c)Objects.......These are shapes to populate the scene
+           TYPES OF 3D OBJECTS
+(a)Mesh
+A combination of geometry and material.Eg a cube is made by a box geometry and material.
+(b)Points
+A collection of small dots in space
+(c)Line
+A connection of dots in space
+(d)Group
+A collection of multiple objects
+(e)Sprite
+An object that always faces the camera.
+All these stem the javascript class of Object3D.
+            PROPERTIES OF 3D OBJECTS
+(a)Position
+Location of an object in the 3D world.Described as x(left or right),y(top and down) and z(front and back).
+(b)Rotation
+The spinning of objects in a 3D space.
+(c)Scale
+How big or small an object is
+             MORE NOTES
+(a)Geometry is the shape of an object.It's properties are Vertices,Edges and Faces.
+-Vertex.......Corner points in a 3D space(point in space defined by x,y and z)
+-Edge..........Combines vertices
+
+

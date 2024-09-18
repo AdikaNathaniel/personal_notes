@@ -1,0 +1,271 @@
+1.Appwrite and twillo for SMS Messaging.
+2.Sentry for tracing of activity on the app.
+Project 1 : A healthcare management system where patients can create accounts and book appointments with doctors of a hospital.An admin dashboard is involved that allows an admin schedule or cancel notifications after which a patient gets an SMS message of the details.
+The frontend is built with Next.js and the backend with appwrite for authentication and databases.
+Future scope of the project is to add a payment page and email verification or an email printout of all the user's details provided.
+3.netstat -aon | findstr :3000
+This code shows the process running on port 3000
+4.taskkill /PID 12345 /F
+Change the PID values with the values on the far right after running the command above.
+5.npm run dev -- -p 3001(Next.js project)
+To run code from vscode on port 3001
+6.Rank of CPUs is Intel Pentium,Intel Core i3(2 cores),Intel Core i5(4 cores) and Intel Core i7(2-8 cores).
+7.To buy CPU,check
+(a)CPU
+(b)Memory
+(c)Generation
+(d)Clock Speed(Highest id 2.5GHz)
+8.MERN STACK-This makes a full stack developer hence frontend and backend.This is for web developement.Express works inside Node.js
+(a)Mongodb--NoSql Database
+(Authentication and Data storage)
+(b)Express--For backend API to interact with frontend
+(c)React-Frontend(a framework or library of javascript)
+Routing to show different web pages
+(d)Node.js--For backend API to interact with frontend
+Hence React for user interaction,Express and Node.js to call API for request handling and MongodB to hold user details.Hence node.js builds the server-side application and Express is a node.js framework that runs on this serever side application.
+9.Stack is a collection three technologies  that  is frontend,backend and database.Hence MERN stack is even distributed in these.
+10.VPN use is encouraged when connecting to a public network.A cyber attack occurs when your machine is sending data or money over a public network and an individual intercepts that network to steal your details(eg password).VPN secures the transaction by creating a terminal where no one sees the transaction.
+VPN disguise your whereabout and give you access to restricted content.Hence VPN allows your machine to a server on another country and access data.
+VPN Client on machine-ISP-VPN Tunnel-Internet
+VPNs don't track the sites you visit.VPNs decrypts your data.Hence advantages is anonymity and acess to firewall blocked content.
+9.A proxy server is an intermediate server to which people can connect to get access to geo-blocked content.The proxy server gives a new IP address to the client and hides yours*.
+VPNs are thought to be more secure and with less downtime compared to Proxt Server because VPNs encrypt the user's details however handlers of Proxy Sever can access the IP address of a user.
+Proxies are faster because of less intricaies involved.
+Proxy server keeps track of the sites being visited.A company can configure Proxy Server such that some sites cannot be visited.
+Media like twitter and amazon make sure every device is resticted to only one account however proxies can be used to bypass this.
+10.A landing page is a destination page made for specific audience with a specific goal.Features include:
+(a)Navigational menus are removed.
+(b)Call-to-action buttons are on top or bottom of a page.The button is reflective of what will happen next say Sign Up or Register.
+11.GitHub Tips
+(a)Be unique on your profile
+(b)Recruiters check if you're constantly updating
+(c)Write a readme that describes goal of the project
+(d)Deploy projects and leave the link in the ReadMe.
+(e)Contribute to projects
+         README TIPS
+(a)Give a description of the project
+(b)Outcome......the goals of the project
+(c)Stack......List all the technologies that is frameworks and libraries used.
+Explain what each technology does.
+(d)Vision.....what are some future things you want to add to the project.
+(e)Stage.....what is done and what is pending or whether you've completed the project.
+*Add images.
+*Link to netlifly
+*How to run and install dependencies if they want to run this project locally.
+*At About: This is the code repository of the " " project.In this project,we build and
+deploy a " ".Covered topics include:........
+Add tags to the about
+12.Next.js is an extension of React.Hence React is the base.
+Hence,knowing JavaScript to do React.
+SSR....Server-side Rendering.
+In react,most tasks are handled on the client-side however Next.js allows for SSR to lift burden off the browser.
+Hence SSR allows users with slow internet to view content more quickly.
+Hence,Next.js can handle frontend and backend.
+React was created by Facebook.In react,hooks are used to :
+(a)Manage States
+(b)Manage Effects
+(c)Manage browser events
+Server Components:
+(a)Fetch data
+(b)Access backend resources
+(c)Keep sensitive information on the server
+(d)Reduce load on client-side
+Forms are:
+(a)Interactive
+(b)Handle Events
+(c)Send data to dB
+'use client'...........denotes a client component
+SEO implies Search Engines understand your  websites better and can recommend it to more
+users.
+Hence,Next.js gives better SEO and an improved user experience(faster page load and less waiting time).
+Next.js allows gives better security.
+When pushing to github is giving errors : git remote set-url origin https://<TOKEN>@github.com/<USERNAME>/<REPOSITORY>.git
+Profile Readme Templates: https://github.com/kautukkundan/Awesome-Profile-README-templates
+
+Useful Extensions
+1.CodeTime......shows activity in your vscode.This shows how much time you spent coding.
+2.One dark Pro....Good visualization on eyes
+3.Color Highliht
+4.ES7/React/Redux........This gives the shortcuts to write React commands.Get this from command Palette.
+5.Material Theme Icons....This gives icons a colory feel.
+Git Commands
+1.git init
+2.git add .
+3.git commit -m "Hello there"
+4.Create Repository
+5.git remote add origin (https of repo)
+6.git push -u origin (branch_name)
+Others:
+(a)git branch (give a name).....This creates a branch
+(b)git branch.......To check the branch name
+(c)git checkout (name given).....This does a switch to the initially created branch.
+You can create changes on one branch and changes on another.Thus by switching between the branches,you can easily
+retract changes.
+(d)git merge (second branch)....Say you have an initial branch called master.You can merge the master and footer branch
+by moving to the master branch and doing a git merge footer to have the footer now onto the master.
+(e)git pull.......Checks if everything is up to date.Hence do a git pull after a git merge.
+
+               WEB DEVELOPMENT PATH
+(A)HTML,CSS(Cascading Style Sheet) and JS
+HTML and CSS(Markdown Language)
+JS(Programming language of the web)
+Do projects with these
+Advanced:
+(B)Flexbox and Grid,Version Control and Deployment
+(C)Arrays and Object Methods,Asynchronous JS and API Data Fetching
+Frameworks:
+(A)React,Angular and Vue.....Frontend framework
+(B)Node.js......Backend framework
+Full Stack......MERN Stack
+NB:Facebook is a full stack application
+Hence,web development comprises:
+(a)HTML
+(b)CSS
+(c)JS
+(d)React.js....frontend
+(e)Node.js.....backend
+(f)MERN Stack...Full Stack
+Not simple but doable!(Time and Effort)
+            Best VS Code Shortcuts to Boost Your Development Productivity
+1.Ctrl + P......................Shortcut to locate a file in a project
+2.Ctrl + B.......................Collapse the side bar
+3.Ctrl + Shift + L...............This selects all instances of a word in code to be changed
+4.Ctrl + ~........................Opens and closes terminal
+5.Ctrl + /........................Gives a commented line from wherever you are be it the beginning,middle or end.
+For multiple lines,select all and do a Ctrl + /.
+6.Ctrl + Spacebar.................Gives suggestions which were initially lost like whilst typing.
+7.Ctrl + Shift + (.............Folds a block of code   
+8.Ctrl + Shift + ).............Unfolds a block of code
+Both 7 and 8 are not so necessary
+9.Ctrl + Shift + ArrowKeys.....This selects multiple lines based on arrow key direction
+10.Ctrl + Alt + ArrowKeys........This rotates the windows based on what happens
+11.Ctrl + Shift + T........Works in VSCode like in browsers
+12.Ctrl + W................Works in VSCode as in browsers by closing a tab or file.
+html:5.....................This gives the default html content.
+                      SEO.......Search Engine Optimization
+-Websites are advised to use good SEO techniques.This allows websites get high rankings in google.
+-The process of increasing the quality and quantity of website traffic.
+Better SEO ensures visitors get to your website almost always.
+                     TYPES
+(a)Off-Page SEO......This is not controlled by a developer but by factors such as
+Niche or location of the website and quality content of website in respect to users requests.
+(b)On-Page SEO.......This is implemented by the developer
+              REQUIREMENTS OF GOOD SEO(On-Page SEO)
+(a)Title tag
+(b)Description(holds title we see when  a search is done)
+Descriptions must be unique,less than 150 words containing the essential keywords.
+This is held in the meta tag specifically the content section.
+(c)Url must be easy to understand and tell what the page is about.Usually below
+115 characters.The shorter a url,the better.
+(d)Other meta tags
+ -viewport:This gives instructions on control of the page's dimensions and scaling.
+ -charset: This gives the language set being used that is English or whatever
+ -author : This shows the author of the page.
+CMS--Content Management System
+(e)Favicon.......This is an icon that seeks to improve user experience.
+It is on the side of the url.
+(f)Images........Large images ensure a slow image
+Eg is compressJPEG.com
+ <img  src="nat.PNG"  width="50%"> 
+The width property ensures that a developer can determine how large an image is.
+alt property in the img  helps image be associated with the content of a website.
+Hence a description of the image.It will appear as a tooltip in most browsers.
+(g)Mobile friendliness of a website
+(h)Minify and compress the website to ensure faster download speed.
+Manually,remove spaces  to achieve this.
+A website does this.
+(code . )..............This is a command that opens VSCode from whenever you are.
+    NOTES
+1.Deployment is the process of moving an app from a local host(machine) to a remote public server.
+This allows computers across the internet access it.
+Vercel is the main deployment tool for Next.js
+2.Code Review is done using SonarQube.SonarQube is used to identify mistakes of developers.
+3.In event that a file or folder does not want to delete,
+(a)Open Winrar
+(b)Navigate to folder,Shift + Delete
+Otherwise,run CMD as administrator then.....rmdir/q/s (folder name)......in the terminal
+ COMPUTER SPECS
+(a)dxdiag.......dx diagonistic tool
+BLOB...Binary Large Objects
+-A collection of binary data stored as one object.
+-Blobs are usually images or audio or videos.
+-Blob Storage is an unstructured database such that service is hosted in the cloud.
+-Blob is dynamic data stored in containers.Maximum BLOB storage is 2GB data.
+BLOB and CLOB(Contextual) are LOB(Large Objects)
+                                     DEVFEST 2024 NOTES
+ RESPONSIBLE AI
+-Promotion of AI that promotes our good Ethical values and respects privacy.
+-Gemini is a google AI
+-ML for google translate was developed by Google.
+-Secure AI Framework...........A framework for securing AI systems  across all layers of Application,Data,Model and Infrastructure layer.
+                            DEVFEST LESSONS
+1.Everything starts what you have.
+2.Start where you are.
+3.Comparison is the thief of joy.
+4.Consistency is good.Consistent hardwork is better.
+5.Grow with your friends.
+6.Done is better than perfect.Just get it done!
+7.Do more.Talk less.Execution talks every time.
+8.Start with something small.
+       LEVERAGING  NATIVE WEB CAPABILITIES ON AN APP
+NATIVE WEB CAPABILITIES is giving web applications features that are traditionally only available on native apps.
+Eg
+- hardware like cameras or microphones
+-Offline functionality
+-Push notifications that is notifying User B that User A has sent something.
+ (1)Web Share API..........allows to share a link or text.This is lines of code to do this
+Eg share from web browser to Whatsapp
+ (2)File System Access API.......This allows to read,write or save files and access files in a specific directory.
+ (3)Contact Picker API...........This allows a user select entries from their contact list and share the details of a selected entry
+from a website or application.
+All available on Chrome.
+Others : Chrome capabilities.
+        NO CODE TOOLS(UI/UX DESIGNS)
+1.FlutterFlow......Specific to mobile
+2.Figma...........Mobile and web designs
+3.Hubspot.........Marketing that is emails and content creation
+Seamless........effortless navigation
+KISS.....user is able to navigate easy to do what they want to do.
+   AUTOMATING APP DEPLOYMENT TO APP STORES AND NOFITYING TEAMS VIA SLACK
+(A)Reqirements to deploy app to Playstore
+-Developer Account.......paid for so you pay once for a lifetime
+If you don't have a Macbook to develop an IOS app,virtual machines can be used.
+Fastlane is the automation tool to deploy apps.
+-Qualities of a birch tree(always bends but always bounces back to normal)
+  *Strong
+  *Durable
+  *Resilient
+There is  much more to do,you have not gotten there yet and remember it's resilience each time.
+DevOps is a practice that supports the software engineering process.
+-Less is More.
+-Do more with less.
+-The journey matters more than the final destination.That is focus on building and learning.
+                     HTML,CSS AND JS NOTES
+1.id property in html go with # in css.
+2.class property in html go with # in (.).
+                     GETTING WIFI PASSWORDS
+1.netsh wlan show profile
+2.netsh wlan export profile folder=C:\ key=clear
+3.Go to Local Disk C and open the file with notepad.
+*Run CMD as Administrator
+--A good skill in IT is ability to learn on the job.
+--A good skill in IT is working in a team.Be a people-person
+--A good skill in IT is finding answers and self-learning.
+                     COMPUTER MUST-KNOWS
+1.Windows + ArrowKeys........Shares the screen.This is called Windows Snapping.
+2.Windows + Tab...........Gives an overview of all open tabs to select one easily.
+3.Windows + V..............This shows a clipboard history.
+4.Windows + Shift + S......Snipping Tool.This is saved to clipboard history no matter how many.
+5.Windows + Alt + R.........This does a screen recording of one particular thing you're
+working on.C:\Users\ACER\Videos is the storage area of the recording done.
+6.Windows + E......Opens Explorer
+6.Windows + (Number(1-10)).....This opens a particular program on the taskbar
+7.Windows + D............First instance makes only windows available and the second brings all programs back.
+8.Windows + (.)...........This gives emojis and special characters like the copyright symbol.
+9.Windows + L.............This locks a PC
+ 
+
+
+
+
+
