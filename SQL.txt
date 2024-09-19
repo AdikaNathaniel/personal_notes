@@ -1,0 +1,318 @@
+1.SQL is a language for handling relational databases.
+2.Schema is the various tables a database has.
+3.Database is a collection of related information.
+4.DBMS(Database Management System) is a software to create and maintain a database.
+5.Operations in using a DBMS is CRUD(Create,Read from a database,Update a Database and Delete from a Database)
+6.Types of Databases include
+(a)Relational Databases(SQL) ..........Makes use of tables with rows and columns where a unique key identfies a row.
+Eg mySQL,PostgreSQL,Oracle and mariaDB.
+(b)Non-Relational Databases(NoSQL)........No tables are used and examples include key-value pairs,documents such as JSON,BLOB and XML and Graphs.
+Eg mongoDB,firebase,dynamoDB,apache cassandra
+-Each of the above has it's own way(language) of implementing NoSQL.
+7.Query is a request made to database management system.Eg a google search is a query.
+                CONCEPTS IN RELATIONAL DATABASES
+1.Columns are the attributes.They are vertical.
+2.Rows are horizontal.(Rows is a singular entry)
+3.Primary Key is  a column that uniquely identifies a row in a database.
+Primary keys differ for each row.Eg is StudentId
+      TYPES OF PRIMARY KEYS
+*Surrogate key is a key that has no mapping to the real world.That is a 
+random number assigned to an individual.
+*Natural Key is a key that has a real-world mapping.Eg is student ID number of Id, a Voter's ID  and 
+SSN(Social Security Number).
+4.Foreign Key is a key that is a  link to another table in a database.
+5.Composite Key refers to two or more values acting as Primary Keys.
+This is a differential only when the two keys work together. 
+The primary keys in that table can acts as foreign keys.
+*The concepts in SQL is same but implementation id different.
+                 NOTES
+           TYPES OF SQL
+1.Data Query Language(DQL)
+This is used to get data already stored in a database.
+2.Data Definition Language(DDL)
+This is used to define a database schema.
+A schema is a layout of a DB that is columns and rows in data and the various datatypes used.
+3.Data Control Language(DCL)
+This controls users and permissions to a database.Eg is Grant and Revoke
+4.Data Manipulation Language(DML)
+This is used for inserting,updating and deleting data in a database.
+    QUERIES(NOTES)
+SELECT employee.name
+FROM employee
+WHERE employee.salary > 30000;
+        DATATYPES
+1.Int........Whole Numbers
+2.Decimal(10,4)....10 digit fixed number with 4 decimal places
+3.Varchar(10)......This stores a string of length 10
+4.Blob............This stores large data say images or videos
+5.Date.............YYYY-MM-DD
+6.Timestamp........YYYY-MM-DD HH:MM:SS
+
+USING HERE AS EDITOR,
+//Defining the database Schema
+CREATE TABLE student(
+   student_id INT PRIMARY KEY,
+   name VARCHAR(20) NOT NULL,    //This implies no row can be empty
+   major VARCHAR(20) UNIQUE     //This implies every major in all rows must vary
+   age  INT  DEFAULT 'undecided'
+   rownumber INT  AUTO_INCREMENT   //This increases the number from 1 without we specifying it.
+);
+
+DESCRIBE student;
+//This shows the entire table
+
+DROP  TABLE student;
+//This deletes the entire table
+
+ALTER TABLE student ADD gpa DECIMAL(3,2);
+//This adds a column to  the entire table
+
+ALTER TABLE student DROP COLUMN gpa;
+//This removes a column from the entire table
+
+INSERT INTO student VALUES(1,'Jack','Biology');
+//This adds a row to the entire table
+
+//Doing an update with specifics
+UPDATE student
+SET major = 'Bio'
+WHERE major = 'Biology'
+
+UPDATE student
+SET major = 'Bio'
+WHERE student_id =4;
+
+UPDATE student
+SET major = 'Bio'
+WHERE student_id =4 OR student_id =6;
+
+UPDATE student
+SET major = 'Bio', name = 'Nat'
+WHERE student_id =4;
+
+//Doing an update to entire table
+UPDATE student
+SET major = 'Bio'
+
+//Deleting all rows in a table
+DELETE FROM student;
+
+//Deleting with specifics
+DELETE FROM student;
+where student_id =5 AND name='Bio';
+
+SELECT * FROM student
+
+//Using the Select Keyword
+SELECT * 
+FROM student
+
+SELECT name,major
+FROM student
+ORDER BY name;   //This ensures that the output comes out in alphabetical order according to the name.
+
+
+SELECT name,major
+FROM student
+ORDER BY name DESC;
+
+
+SELECT *
+FROM student
+ORDER BY name,student_id;  //In event that names are same,we will order by  student_id
+
+SELECT * 
+FROM student
+LIMIT 2;         //This limits the output to only 2 that is the first 2.
+
+SELECT * 
+FROM student
+WHERE major = 'Chemistry'
+
+
+SELECT * 
+FROM student
+WHERE NAME IN ('Claire','Ashei')
+
+
+* Comment is (--)
+* Note that different comparison operators can be used.
+<> ........NOT EQUAL TO
+
+SELECT * 
+FROM student
+WHERE major = 'Chemistry' AND name <> 'Jack'
+
+To leave a particular column out,
+INSERT INTO student(student_id,name) VALUES(1,'Jack');
+
+SIDE NOTES(Constraints)
+1.NOT NULL
+2.UNIQUE
+3.PRIMARY KEY
+4.DEFAULT
+
+Using foreign keys,draw connections between tables specifically to that entry given.
+To make a column,a foreign key,
+FOREIGN KEY(mgr_id)
+
+-To rename  colums first_name to forename and last_name to surname ,
+SELECT first_name  AS forename,last_name AS surname
+FROM employee
+
+-To identify different entries in a column ,
+SELECT DISTINCT sex
+FROM employee;
+                              SQL FUNCTIONS
+1.COUNT
+SELECT COUNT(student_id)
+FROM students;
+WHERE sex = 'F' AND age > 12
+//This counts the total number of student ids in a table.
+
+2.AVERAGE
+SELECT AVG(salary)
+FROM students
+WHERE sex = 'M';
+
+3.SUM
+SELECT SUM(salary)
+FROM students
+WHERE sex = 'M';
+
+4.AGGREGATION USING GROUP BY
+SELECT COUNT(sex) ,sex
+FROM employee
+GROUP BY sex
+
+This gives the number of males and  females each.
+5.WILDCARD(LIKE)
+%.........Shows any number of characters
+_.........This shows one character.
+This identifies a name that has or ends with some specified characters.
+SELECT *
+FROM client
+WHERE client_name LIKE '%Adika';   //ends with Adika
+
+SELECT *
+FROM client
+WHERE client_name LIKE '% Adika%';
+
+Finding the birthdays in October,
+SELECT *
+FROM employee
+WHERE birthdate LIKE '____-10%';    where 4 of _ denotes the year.
+
+6.Union
+Combines the results of a collection of SELECT statements.
+SELECT first_name AS Combinational Names
+FROM employee
+UNION
+SELECT branch_name
+FROM branch
+*A general rule is that the SELECT statement must have the same number of columns and the same 
+datatype.
+                              JOINS
+This joins tables specically rows based on some related columns and row entries.
+SELECT employee.emp_id,branch.branch_id,employee.first_name,branch.mgr_id
+FROM employee
+JOIN branch             (These two are the tables to be joined)
+ON employee.emp_id = branch.mgr_id   (These rows have the same values)
+                 TYPES
+1.Inner Join
+2.Left Join (Include all rows on the left table where if there's no common ground with 
+              the right,there's a null) 
+3.Right Join(Vice Versa)
+                              NESTED QUERIES
+SELECT client.client_name
+FROM client
+WHERE client.branch_id = (
+         SELECT branch.branch_name
+         FROM branch
+         WHERE branch_name = 'Nat'
+         LIMIT 2;
+);
+                            ON-DELETE WITH FOREIGN KEYS
+
+1.On-Delete Set Null
+On deleting one entry which is a foreign key,fix NULL to it's location and keep the others.
+2.On-Delete Cascade
+On deleting one entry,remove the other entries.In the foreign key assignment like on 
+creating the schema,call 'ON DELETE CASCADE'
+
+DELETE FROM branch
+WHERE branch_id = 2;
+                                   TRIGGER
+Trigger defines action that should happen when a certain action
+occurs in our database.
+Delimiter........This tells that a trigger is done being created.
+Eg Trigger
+    
+DELIMITER $$
+CREATE 
+       TRIGGER my_trigger BEFORE INSERT
+       ON employee
+       FOR EACH ROW BEGIN
+              INSERT INTO tableu VALUES('added a new employee');
+       END$$
+DELIMITER ;
+
+This trigger implies that on inserting into the employee table,do a 
+trigger to insert into the  tableu table.
+
+Conditionals of IF,ELSEIF,ELSE and END IF can be used.
+Eg 
+
+DELIMITER $$
+CREATE 
+       TRIGGER my_trigger BEFORE INSERT
+       ON employee
+       FOR EACH ROW BEGIN
+              IF NEW.sex = 'M' THEN
+                  INSERT INTO tableu VALUES('added a new male');
+              ELSEIF NEW.sex = 'F' THEN
+                  INSERT INTO tableu VALUES('added a new female');
+              ELSE 
+                  INSERT INTO tableu VALUES('added one we don't know');
+              END IF;
+       END$$
+DELIMITER ;
+
+-Hence,based on the sex we insert on the employee table,the trigger statement is generated.
+-You can change the Insert to Update,Before to After and so more.
+                  ENTITY RELATIONSHIP
+ER diagram shows the different relationships between tables in a database.
+ER diagrams allow for conversion to a database schema.
+                  PARTS
+* Entity is an object to be modeled and information being stored about.
+* Primary Key uniquely identifies an entry in a database.In an ER Diagram,this is usually 
+underlined.
+* Composite Attribute is an attribute that can be broken down into smaller attributes.Eg is a name into 
+first name and last name.
+* Multivalued Attribute is an attribute that can have more than one value.
+This is usually given as a double oval.Eg is clubs in a school.
+* Derived Attribute is an attribute that can be derived from other attributes.
+Eg is lastname as a derived attribute from full name.Age from birthdate.
+* Relationships are denoted by diamonds.Eg Takes in a diamond.
+* Single line denotes partial participation and double line denotes total
+participation.
+* Relationship Cardinality is the number of instances of an entity from a relation
+that can be associated with the relation.Eg is 1:1,1:N and N:M(Many To Many).
+* Weak Entity is an entity that cannot exist without another entity.Eg is an exam cannot exist without a class.
+Video from 4:00:05 describes ER DIAGRAM Implementation
+* Binary Relationship has two entities.
+* Where both keys are foreign,we get a compound key.
+
+(Branch)1:N(Employee).......Employees can belong to only one branch.
+
+                                     PART TWO
+
+
+
+
+
+
+
+ 
+
+
