@@ -1,0 +1,29 @@
+        TECHNOLOGIES USED
+1.React.js
+2.Tailwind CSS
+3.Framer Motion is an animation library for React.
+4.Aceternity UI makes the website more attractive.
+5.Sentry to monitor application and check for breaks.
+ToDo...........Install Tailwind CSS extension,es7+
+``...........This implies a dynamic template string.
+6.Floating Navbar works when a scroll down is done.
+
+---To Check
+"row-span-1 relative rounded-3xl
+group/bento hover:shadow-xl transition
+duration-200 shadow-input dark:shadow-none
+p-4 dark:bg-black dark:border-white/[0.2]
+bg-white border border-transparent 
+justify-between flex flex-col space-y-4
+border-red-500",
+className
+
+
+--Change projects to yours(text,description and images)
+--What are nmaed exports?
+--Edit the images to suite that for your project.
+--Setup sentry to a next.js project
+
+
+
+You unlocked new Achievements with private contributions! Show them off by including private contributions in your Profile in settings.

@@ -1,0 +1,63 @@
+                             HUBTEL INTERNSHIP NOTES
+1.In-app Notifications
+Notifications inside an app e.g like in LinkedIn.This helps users not forget important
+information.
+*Push notifications dives users back into an app.Example are notifications on top of your screen
+that when you tap you get into an app.
+--There are notifiction servers(Apple or Google) between sender and receiver.
+--Notifications are sent by tokens.
+--When you send a message from your phone,the notification server gives your device a token.
+The token represents the application of that device.Thus each device has different tokens for that application
+hence making it easy to transfer notifications between apps on devices.
+--Companies use push notifications to alarm staff of a meeting.(Broadcast info to everyone).
+SNS...........Simple Notifications Service.
+--Push notications are not so necessary but helpful.
+--Push notifications are used for:
+(a)Chat or messaging apps
+(b)Alarms for services
+
+2.(A)Web Socket is a protocol that enables two way communication between client and server.
+API is a one way communication protocol.It allows for persistent communication.
+Data is transferred as JSON format.It uses handshake.
+Typical use case of web sockets is in betting apps where updates are constantly being
+received from a server.Online gaming and chat applications use Web Sockets.Connection exists continuously 
+unless terminated.Communication is via events and messages.
+Another is Stock Trading Websites where updates are constantly sent from the 
+backend to the frontend.For Games,web sockets ensure UI is constantly refreshed
+as a match goes on.
+
+OTHERS:
+(a)Http is one way(either client sends and server waits or vice versa) and TCP is two way
+that is both van send.Http is stateless.Hence,web sockets works on TCP.
+Web Sockets are faster because they are two-way.
+**Polling is the process by which a client makes a request for data from server.
+Polling is done at intervals.Polling causes alot of connection to be established
+of which many contain empty responses.Alternative is HTTP Long Polling which causes 
+data to pushed to client constantly from server whenever data is available.
+Web Sockets is full duplex.Hence,server is constantly checking database for latest data.
+
+--socket.io is a javascript library for easy implementation of web sockets.
+--Web Sockets are not supported in older browsers.
+--Whatsapp uses web sockets.
+**High Level implies a general overview.
+**Sending message to a friend is POST.GET is used to receive the message.
+
+Http(REST) is easier to setup.
+MAJOR COMMUNICATION PROTOCOLS
+1.Short Polling is the process by which client is constantly requesting for data
+from server where it receives an empty request or data(JSON).Within few seconds,
+a call for data is made again.There's continous use of resources here.
+2.Long Polling is similar to short polling however in event that there is no data
+after a request,the server keeps the connection for which if data arrives,it is
+forwarded to the client.
+3.Web Sockets ensures a bidirectional constant connection.Eg is data to multiple
+clients on a system is good implementation of web sockets.
+SSE....Server Sent Events(Unidirectional flow)
+Data is constantly sent from the server.This is stateful.Eg is Live Stream where
+a video is being sent directly to our devices.
+UPI.....Unified Payment Interface.
+TCP is in the transport layer.
+Stateless implies that after data transer,connection is automatically lost.
+AJAX...Asynchronous Javascript And Xml
+Hence,we say an AJAX request.
+4.Polling 

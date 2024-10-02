@@ -1,0 +1,7 @@
+Fuctions
+1.Add a task
+2.List a task
+3.Use for styling
+4.Flag a task as done
+5.Edit a task
+6.Delete a task
