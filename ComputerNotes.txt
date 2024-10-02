@@ -287,6 +287,8 @@ Incase local host(for html,css and js project) for browser is not coming up, do
 8.git branch -d  master............This is to delete the  local master branch
 9.git push origin --delete master......This is to delete the  remote master branch
 
+https://portfolio-deeks.vercel.app/
+
 
 
 

@@ -61,3 +61,86 @@ Stateless implies that after data transer,connection is automatically lost.
 AJAX...Asynchronous Javascript And Xml
 Hence,we say an AJAX request.
 4.Polling 
+Polling is a technique used to check for new data from source.
+Short Polling makes a client request for data at regular intervals.Sever sends a 
+response immediately after which connection is cut off.
+Short Polling is used for apps that have low data volumes say email clients.
+Long Polling is used for apps that have high data volumes say trading apps.
+Short Polling is stateless whilst long polling is stateful.
+(a)Short and Long Polling is used in message queues.
+(b)Server Sent Events is also termed streaming.
+(c)In long polling,client is first authenticated and constantly asking 
+server for a response.That connection(handshake) exists for a while
+until both terminate it.Eg is in stock price constant updates.
+(d)SQS.......Simple Queue Service
+(e)A disadvantage of long polling is that much resources are used.
+(f)In long polling,a response is only sent when data is present otherwise,no response is sent.
+Ajax request are short polling.
+(g)Long polling is one-way.
+5.Gradle
+An open-source build automation tool for softwares.
+Android Studio uses Gradle(stamped by Google).Gradle runs when we press "Run" in Android Studio.
+Gradle does:
+(a)Runs Tests
+(b)Combines code from multiple sources
+(c)Generates documentation
+(d)Manage Dependencies and publish applications
+Basically build implies that,we compile,run tests,package code (into jar and war) and deploy and run the code.
+Hence,gradle being a build tool does the above.
+Maven and Ant existed before Gradle.Maven deals with convention that is a specific format to which 
+the folder structure must follow.Maven deals with pom.xml.Gradle is an improvement of these.
+Gradle is commonly used in Groovy,Kotlin and Java or basically JVM languages.
+Gradle is to compile,package and test.Gradle expects a project to have a specific layout that is folder structure.
+Using gradle,there's a 'build.gradle' file written in Groovy or Kotlin with which
+Gradle uses.To setup gradle,
+(A)gradle init
+(B)gradlew build............This is to build an app with gradle.
+Maven is written in Java and used to build projects in C#,Scala and Ruby.
+*pom is Project Object Model
+Maven is good for small projects whereas Gradle is good for large projects.You can
+easily switch from maven to gradle anytime.
+(B)Commonly,maven and gradle are used in Java and C#.Maven is usually thought to be 
+specific to Java,JVM and related IDEs however Gradle is domain-specific.
+Maven is mostly for server-side languages whilst Gradle is for both server and client-side languages.
+(C)Maven uses xml whilst Gradle does not.
+This idea is very much similar to "dotnet build."
+Gradle in Java provides alot of plugins to setup an app.
+Whereas gradle adds to a project,maven compiles the code without any additions.
+Build Script usually 'build.gradle' holds all dependencies to be added to the project.
+6.SonarQube
+(a)Developed by Sonar and written in Java.
+(b)SonarQube detects and fixes issues in code with speed and precision.This helps to 
+develop clean code.SonarQube is integrated into CI/CD pipelines.
+(c)SonarQube works based on clean as you go.
+(d)SonaqQube improves code and software quality.It deals with defect management and
+quality attributes.
+(e)SonarQube is for static and dynamic code reviews.SonarQube ensures proper coding  standards are used.
+*Static review....Review done without running code.
+*Dynamic review...Review done when code is in execution.
+(f)SonarQube is for the probing of large codebases.It is used for different programming 
+languages.
+(g)SonarQube deals with:
+-Duplicate code
+-Coding Standards
+-Unit Tests
+-Code Complexity
+-Code Coverage...........portion of code as a percentage that is run and tested.
+-Code Vulnerability......portion of code that is open to attack say username and password
+is available in code.
+-Code Smells............Poorly written code and creates confusion that does not
+follow programming standards.
+(g)SonarQube works with build tools of Maven and Gradle.The build tool is
+setup when configuring SonarQube.
+(h)SonarQube checks entire source code or codebase for bugs.
+*Community version is free and very limited.
+*SonarQube has a number of rules it measures against written code.
+COMPONENTS OF SONARQUBE
+(A)SonarQube Server
+1.Rules
+2.Database(link to PostgreSql or any)
+3.Web Interface
+(B)SonarScanner.......Supports 27 languages
+--Jenkins is a deployment tool.
+
+
+ 
