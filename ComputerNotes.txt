@@ -289,6 +289,64 @@ Incase local host(for html,css and js project) for browser is not coming up, do
 
 https://portfolio-deeks.vercel.app/
 
+SaaS...........Software As A Service
+(1)Instead of installing a software and paying for license,Saas allows to access these
+on the internet(Cloud) where you pay only for what you use(Subscription).
+(2)SAAS ARCHITECTURE
+(a)Frontend Tier...........Html,Css And Js
+(b)Application Tier........Executes business logic
+(c)Database Tier...........Storing Data
+(3)Types of SAAS Software
+(a)Vertical............Used by small companies
+(b)Horizontal.........Used by large companies
+Cloud Computing Models
+(a)SaaS....Software As A Service(mostly used by developers)
+(b)IaaS....Infrastructure As A Service
+(c)PaaS....Platform As A Service
+Egs are 
+(a)GMail
+(b)MS Office
+(c)Spotify
+(4)SaaS can be accessed  from anywhere.Version updates are always done for you.
+SaaS is scalable that is maximum performance regardless size.
+This concept potrays distributed computing.
+(5)Pro Presenter at Church can deploy SaaS.
+Package Managers.
+(a)npm.......Node Package Manager which is CLI Tool that is bundled with Node.js
+packagelock.json. npm was developed by Microsoft or GitHub team.
+(b)yarn......A package manager developed by facebook to deal with issues of npm
+yarn.lock file
+Yarn just came into the market.
+npm is widely used and easy to work with whilst yarn is usually faster.
+  GITHUB RECAP
+Version Control is basically to track changes.
+You make a pull request and owner of repo accepts or declines it.
+       FEW  COMMANDS
+(1)git clone "url from GitHub"
+(2)git checkout -b natbranch...........CREATING AND CHECKION OUT TO A BRANCH
+    HEALTH RISKS OF PROGRAMMERS
+(1)Prolonged Sitting.....Walks or exercise
+(2)Eye Strains..........20 mins,20 second look at smth 20 feet away.
+(3)Fruits as you program
+  GOOD SOFTWARE PRACTICES
+(1)Early code delivery
+(2)Collaboration via GIT,CI/CD testing,Jenkins and Debugging
+Project Management in SE is Scheduling tasks,allocating resources and managing team
+members.
+    ROLES OF PROJECT MANAGER
+--Establish the project scope(Objectives,Resources required and expected completion dates)
+--Develops a project plan
+--Outlines responsibilities and roles
+--Ensure communication channels like regular meetings between members
+--Tracking projcet progress
+--Control potential hazards
+--Taking notes of areas for improvement
+ 
+
+
+
+
+
 
 
 
