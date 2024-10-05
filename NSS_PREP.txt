@@ -136,6 +136,54 @@ These are features that can be obtained from a git blame.
 information between lines 5 and 15.
 7.git log -p "commit-id".......................This gives info on that file
 *Commit messages must be in present tense.
+                                  UNDO A COMMIT
+1.git log.........................This is to get the commit hash you want
+2.git revert <commit-hash>
+3.git push origin main
+                    GIT RECAP
+1.Git is a distributd version control system
+2.In previous times,the default name of a branch is master but now the default is main
+3.In a git log,the most recent commit appears on top.
+4.Head is a pointer to the latest commit created.
+5.Comparing Git to GitHub,git is a tool to track changes whereas GitHub is a cloud 
+platform.
+6.Types of repository are local and remote repository.
+Aside GitHub,there's GitLab and BitBucket.
+7.Name default branch as main to connect it to the remote repo.
+8.The branch you push from is the one that will be seen on your remore repository.
+9.The format is always git add,git commit and git push.
+10.Commit messages must be in the present tense say "Add a new book".
+Let it answer to: "This commit will .............."
+11.git push --set-upstream origin "branch_name"...........This does a push of that
+local branch to the remote repo.
+   OR 
+git push -u origin "branch_name"...............This also works
+After these,you can manually do git push.
+12.From "Compare and Pull Request",you can choose branch to merge to(on far left)
+
+
+
+
+
+                    GIT COMMANDS
+1.git config  --global init.defaultBranch nathan..................This command creates the default branch from 
+main to nathan
+2.git checkout <commit-hash>.............This takes the head to a previous file committed.
+3.git checkout -f nat
+   OR 
+  git checkout nat.................These are to switch from one branch to another
+4.git branch -M main...............This creates a default branch as main to be linked
+to the remote repository.
+5.git remote add origin "https:...."
+6.git branch "branch_name"..........This creates a new branch
+7.git checkout "branch_name"........This does a switch to that branch
+8.git checkout -b "names"............This creates a branch and switches to it.
+9.git branch "new_branch" "source_branch".......This creates a new branch which inherits
+all properties of the source branch.Hence,all commits on the source branch are on the
+new branch.
+10.git pull...........This ensures the remote repository is same as that of the local repositoty.
+      OR
+git pull origin main
 
                                               AGILE METHODOLOGY
 Agile is not a methodology but a philosophy.
@@ -166,7 +214,7 @@ StandUps are intended to be very short.
 (e)Lean................An agile methodlogy where processes inhibiting quick delivery of products is quickly removed.
 *Version Updates deploy Agile Methodology.
 *This is feedback dependent
-                        AGILE PRINCIPLES
+                        AGILE PRINCIPLES(MANIFESTO)
 1.Customer Satisfaction
 2.Welcome Changes
 3.Deliver Frequently
@@ -176,7 +224,7 @@ StandUps are intended to be very short.
 7.Working Software
 8.Constant Pace
 9.Good Design
-10.Simplicity
+10.Simplicity(new member should be able to fit in)
 11.Self-organized teams with different skills to complement each other.
 12.Reflect and Adjust
                                  AGILE VALUES
@@ -189,6 +237,16 @@ StandUps are intended to be very short.
 2.Scrum Master............One who facilitates the team(product owner,develper and tester) to follow agile principles and values
 3.Tester
 4.Cross-functional team of testers and developers
+User Stories............A small set of requirements defined by a client
+Acceptance Test..........A match of task to user story
+Acceptance Criteria........Features defined for which a user story can be considered as Done.
+                     MAJOR QUESTION FOR STANDUP MEETINGS
+1.What did I do yesterday?
+2.What will I do today?
+3.Any challenges?
+This helps to check if every team member is on track or not.
+*Product Owner,Scrum master and Cross-functional team.
+*Release Planning refers to a plan on how updated features will be given out(released) to users.
 
 
 
