@@ -1,0 +1,197 @@
+        GITHUB BASICS
+1.Merge and Rebase take changes on a feature branch to be added to a main branch.
+2.Rebase takes changes on a feature branch and puts them on top of a master branch.
+This ensures less complications when working with others on a team.
+        COMMANDS
+1.git pull origin main
+2.git checkout -b newb
+3.git add .
+4.git commit -m "News"
+*As I am working with newb branch,other developers may be working on the main branch.
+*Moving back to the main,
+5.git checkout main
+6.git pull origin main
+*This ensures that I have all changes made to the main branch by other developers
+as I worked on the newb branch.
+7.git checkout newb
+8.git rebase main...............This implies take all on main and add to the newb branch
+9.git checkout main
+10.git rebase newb............Do this as a finaliser to close the rebase.
+11.git push origin main
+More Often than not,we delete the other branch created and not the default branch,
+hence:
+*git branch -d newb.............This deletes newb locally but you must be on master for this to happen.
+*git push origin --delete newb
+         EXPLANATIONS  OF MERGER
+*Git Squash......................This puts all commits into one commit and adds to 
+a main branch.
+*Git merge.............This ties commits of a feature branch with that of a main branch.
+*Git rebase.............This takes commits of a feature branch to the tip of a 
+main branch.
+--Every team has their own preferences.
+--The advantage of rebase is that commit  code history is flat
+and readable. 
+             DIFFERENCE
+--Git merge keeps all commits even for clarity whereas git rebase takes off
+duplicate commits.(git rebase gives a cleaner commit history)
+--Git merge has several lines of workflow wherease git rebase has a single line
+of workflow.
+*The similarity is that it is a medium to combine two branches.
+
+**philomatics.com/git-workshop.............Trials for Git
+
+                          GIT COMMANDS
+1.git log -2..............This gives history of last 2 commits
+2. -git checkout newb
+   -git merge master.........This adds newb to master branch
+   -git push origin master
+*Don't do a git push before doing a git rebase.
+*Only push after doing a rebase.
+3.git branch -a...........This shows all remote branches we're working on.
+4.git status..............This shows deleted or modified files
+5.git add fileA...............This takes a file from a local machine to staging area
+6.git diff fileA..............This depicts in A the newly modified parts.
+Hence,once you make changes to a file,do a git diff to see that section 
+in green and previously unmodified file in red.
+*Commit message must be veru descriptive.
+*Version Control can be seen in release of software updates.
+7.git branch nat
+8.git checkout nat
+9.git push --set-upstream origin nat..............This is to send a locally created branch
+to a remote repository.
+                         TYPES OF BRANCHES
+1.Long Running Branches
+This is the main branch all members of the team are working on.
+2.Short-lived Branches
+This is a feature branch for a specific purpose after which it is deleted.
+They are merged or rebased into long running branches.
+                       PULL REQUESTS
+*Pull Requests are way to communicate about code and ask for a review.
+*After a PR is created,reviewer can accept and merge into the main 
+branch.
+*Pull requests is also a way to contribute to an open-source project.
+*Fork is a personal copy of an open-source project to contribute to it.
+Hence,
+(a)Do a fork using the fork button
+(b)Do a git clone to get a copy
+*A scenario of merge conflict occuring is when the same line of code is changed
+by different Devs and committed to the main branch.
+*git status will show a merge conflict.
+To undo a merge conflict,
+*git merge --abort
+*git rebase --abort
+Remember to always do a rebase before a git push to avoid merge
+conflicts.
+*Colleague or Senior Devs "peer review" a pull request.
+                     LONG TUTORIAL NOTES
+1.Version Control is also called source control.(even in VSCode)
+2.DevOps is a set of practices,philosophies and tools that increase ability of a
+team to deliver high quality applicationsat a quick velocity.
+3.git blame is a way of identifying which engineer wrote a line of code so one
+can easily reach out to them for further explanation.
+4.Aside Git,other version control systems are mercurial,subversion,perforce and
+AWS Code Commit.
+5.Major types are
+(a)Centralized Version Control System........Central Server
+(b)Distributed Version Control System........Every user is a server of the source code
+6.Version Control works with Continuous Integration,Continuous Delivery and Continuous
+Deployment.
+                    CLI COMMANDS
+1.touch adika.txt.....................This creates a new file called 'adika.txt'
+2.mkdir adika.........................This creates a new folder called 'adika'
+3.history.............................This is a command that gives a history of
+all commands run in the CLI.
+4.code hey.txt.........................This opens 'hey.txt' in vscode
+5.Unix came before Linux
+6.ls...................................This shows all sub folders in a particular folder
+7.pwd...................................This shows the current working directory(prints 
+the working directory)
+8.mv naj adika..........................Move the naj folder into adika folder
+9.cat nat.txt...........................This displays the contents of nat.txt
+10.wc nat.txt  -w.......................This counts the words in nat.txt
+Any folder with "." beginning it is a hidden folder.Hence,".git" is a hidden folder.
+                      GIT WORKFLOW
+1.Modified
+2.Staged.............This takes a file from local machine to staging area.This is to
+track a file.
+3.Committed..........A savepoint
+Always do a git pull to get latest changes on a remote repository.
+                      GIT COMMANDS
+1.git clone "https:url"
+2.git checkout -b feature/lesson..........This creates a branch and switches to it
+SETTING UP REMOTE CONNECTION TO A LOCAL BRANCH,
+3.git remote add origin "git@github....."
+4.git log --pretty=oneline..................This shows all commits by writing them
+in one line.
+5.git blame "filename"..................................This shows the date and time a commit
+is made.
+*Commit ID
+*Author
+*Date
+*Time
+*Line Number
+*Content of change
+These are features that can be obtained from a git blame.
+6.git blame -L 5,15 nathan.txt..............................This gives the above
+information between lines 5 and 15.
+7.git log -p "commit-id".......................This gives info on that file
+*Commit messages must be in present tense.
+
+                                              AGILE METHODOLOGY
+Agile is not a methodology but a philosophy.
+It is a set of principles and values that enable a team be as flexible as possible.
+It is an iterative and incremental approach.
+Agile was introduced in 2001.
+1.Business Unit give the user stories or requirements.The software team is the agile team who work 
+with stakeholders and product managers.
+2.Sprint refers to short periods of time.
+3.Continuous Integration is deployed to ensure all parts of code fit together.
+4.Continous Delivery allows one to deliver code in each sprint till development of software is complete.
+5.Agile methodology deploy standup meetings.
+6.Other methodology is Waterfall where steps are one after the other.This is the vice versa of Agile.
+7.Various Agile Implemenations(frameworks/methodoligies):
+(a)Scrum..............This divides an entire project into small manageable tasks called user stories which are completed in sprints(iterations).
+The Scrum master facilitates the teams progress.This is deployed at Hubtel.
+This involves:
+(i)Plan
+(ii)Build
+(iii)Test
+(iv)Review
+Agile involves Sprint Planning,Daily Scrum(standup) and Sprint Review(quaterly meetings).
+(b)Kanban.........This uses a Kanban board that track the progress of tasks via backlog(To Do),tasks to Do(In Progress) and Done(Completed) tasks.
+Whereas Scrum has fixed sprints,Kanban is alot more flexible.
+(c)Extreme Programming(XP).......This involves  test-driven development,pair programming and Continuous Integration.
+StandUps are intended to be very short.
+(d)Crystal..............This methodology focuses on user interactions than processes and tools.
+(e)Lean................An agile methodlogy where processes inhibiting quick delivery of products is quickly removed.
+*Version Updates deploy Agile Methodology.
+*This is feedback dependent
+                        AGILE PRINCIPLES
+1.Customer Satisfaction
+2.Welcome Changes
+3.Deliver Frequently
+4.Work Together
+5.Motivated Teams
+6.Face To Face Interactions
+7.Working Software
+8.Constant Pace
+9.Good Design
+10.Simplicity
+11.Self-organized teams with different skills to complement each other.
+12.Reflect and Adjust
+                                 AGILE VALUES
+1.People over processes and tools
+2.Working Software Over Comprehensive Documentation
+3.Customer Collaboration Over Written Contracts
+4.Responding to Change rather than plan
+                       PEOPLE IN AGILE METHODOLOGY
+1.Product Owner..........This is the client
+2.Scrum Master............One who facilitates the team(product owner,develper and tester) to follow agile principles and values
+3.Tester
+4.Cross-functional team of testers and developers
+
+
+
+
+
+ 
