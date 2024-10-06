@@ -160,6 +160,21 @@ local branch to the remote repo.
 git push -u origin "branch_name"...............This also works
 After these,you can manually do git push.
 12.From "Compare and Pull Request",you can choose branch to merge to(on far left)
+13.Merge Conflict is a situation that occurs when two developers edit the same line
+of code.
+14.Git revert is used when you want the commit history to be in git log but
+you want to go back to previous commit.
+It is the opposite of reset because whilset reset takes commit out of history,
+git revert undoes changes but keeps a history of that commit.
+15.git stash is to temporarily save an uncommited changes whether staged or unstaged.
+On doing a git stash,the code you're working on leaves.
+16.The git reset,git revert and git stash are termed the advanced git.
+17. Use .gitignore  to untrack build files and dependencies.
+18. Use Consistent Branch Naming Conventions like feature/user-authentication.
+19.Use Lowercase Letters and Hyphens for naming branches Eg feature/new-ui-design.
+20. Be Descriptive, but Concise Eg feature/user-profile-page
+21. Avoid Long Branch Names Eg   hotfix/critical-bug-in-header-footer.
+22.Use Team-Specific Prefixes Eg  backend/feature/api-endpoint 
 
 
 
@@ -184,6 +199,17 @@ new branch.
 10.git pull...........This ensures the remote repository is same as that of the local repositoty.
       OR
 git pull origin main
+These are usually termed the advanced:
+11.git reset "commit-hash"............This takes a commit off the staging area hence
+one has to add and commt again.
+A git status will show that the particular file has been modified.
+12.git revert <commit-hash>
+git revert --continbue.................This is used when you have somewhat of errors in committing.
+12.qa! OR q....................This is a form of exit
+13.(a)git stash
+   (b)git stash list\...........This gives a stash name such as "stash@{0}:
+   (c)git stash apply stash@{0}
+   
 
                                               AGILE METHODOLOGY
 Agile is not a methodology but a philosophy.
