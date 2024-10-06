@@ -212,7 +212,8 @@ git revert --continbue.................This is used when you have somewhat of er
    
 
                                               AGILE METHODOLOGY
-Agile is not a methodology but a philosophy.
+*Agile is iterative and incremental
+*Agile is not a methodology but a philosophy.
 It is a set of principles and values that enable a team be as flexible as possible.
 It is an iterative and incremental approach.
 Agile was introduced in 2001.
@@ -236,7 +237,7 @@ Agile involves Sprint Planning,Daily Scrum(standup) and Sprint Review(quaterly m
 Whereas Scrum has fixed sprints,Kanban is alot more flexible.
 (c)Extreme Programming(XP).......This involves  test-driven development,pair programming and Continuous Integration.
 StandUps are intended to be very short.
-(d)Crystal..............This methodology focuses on user interactions than processes and tools.
+(d)Crystal..............This methodology focuses on user interactions rather than processes and tools.
 (e)Lean................An agile methodlogy where processes inhibiting quick delivery of products is quickly removed.
 *Version Updates deploy Agile Methodology.
 *This is feedback dependent
@@ -273,9 +274,58 @@ Acceptance Criteria........Features defined for which a user story can be consid
 This helps to check if every team member is on track or not.
 *Product Owner,Scrum master and Cross-functional team.
 *Release Planning refers to a plan on how updated features will be given out(released) to users.
+*Product Backlog is a list of requirements or things to be done.
+*Product Backlog consists of numerous user stories.
+ABC of Agile(Key Terminology of Agile)
+(a)Acceptance...........This deals with whether client accepts product
+(b)Backlog Grooming.......This involves breaking user stories down on the backlog.
+(c)Capacity................The amount of work a team can do within a sprint.
+(d)Task....................Unit of work to complete user stories
+*A disadvantage of agile is that teams are small hence the members must be very 
+knowledgeable.
+*Scrum Master is same as Team Lead.
+*Agile is usually restricted to 3 to 9 in a team.
+          PHASES
+1.Requirements Gathering
+2.Planning
+3.Design
+4.Implementation 
+5.Testing And Deployment
+6.Release And Evaluation
+                 AGILE METRICS
+1.Sprint Burndown...............This is used to measure the amount of done during a sprint.
+Parameters involved are time and work done.
+2.Velocity.......................The average amount of work done by a team in a sprint.
+3.Cycle Time......................This is a measure of the amount of time that a team
+member spends on a task to complete it.    
+           TERMS
+*Jira is a project management tool usually used in Agile.
+*Agile is Developer,QA(Testing) and Customer.  
+*Epic is a collection of user stories
+*Product owner is part of the scrum team and not same as the client.Product Owner does the interaction with the customer.
+*There's a term as Sprint Planning Meeting...........This is a meeting to which the team decides the user stories to be settled in each sprint.
+*Sprint Backlog........................This is a list of user stories for each sprint.
+*Standup is also called scrum meeting/call.
+*Sprint Retrospective meeting.........This meeting is conducted once at the end of each sprint.
+This is a consideration of the good and bad in each sprint.
+*Story Point..............This is a rough estimation of user stories given by dev and QA in the form of fibonacci series.
+*Burndown Chart..........This shows amount of work remaining on the sprint which is controlled by scrum master.
+                                       SUMMARY
+(1)ROLES
+(a)Product Owner
+(b)Scrum master
+(c)Team
 
+(2)ARTIFACTS
+(a)Product Backlog............Contains all user stories
+(b)Sprint Backlog.............Contains stories for that sprint
+(c)Burndown Chart
 
-
+(3)CEREMONIES
+(a)Sprint Planning
+(b)Stanup
+(c)Sprint Review
+                                                  
 
 
  
