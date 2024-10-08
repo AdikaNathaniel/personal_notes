@@ -325,7 +325,38 @@ This is a consideration of the good and bad in each sprint.
 (a)Sprint Planning
 (b)Stanup
 (c)Sprint Review
-                                                  
+                                  SOLID PRINCIPLES
+1.S...........Single Responsibility Principle
+2.O...........Open Closed Principle
+3.L...........Liskov Substitution Principle
+4.I...........Interface Segregation Principle
+5.D...........Dependency Inversion Principle
+                          1.SINGE RESPONSIBILITY PRINCIPLE
+A class should have one and only one reason to change.
+*This implies all classes must have a singular responsibility.This increases the amount of reusuability.
+Eg.
+public class Task{
+      public void downloadFile(String location);
+      public void parseTheFile(File file);
+      public void persistTheData(Data data);
+}
+This violates Single Responsibility Principle because,the Task class is doing multiple things.
+                         2.OPEN CLOSED PRINCIPLE
+Software entities should be open for extension but closed for modification.
+                         3.LISKOV SUBSTITUTION PRINCIPLE
+Subtypes must be substitutable for their base types.
+*Use inheritance only when superclass is replacable by a sub class.
+                         4.INTERFACE SEGREGATION PRINCIPLE
+The dependency of one class to another should depend on the smallest possible interface.
+*Keep interfaces as small as possible because if you've got alot of methods in an inteface,then once you add another method in an 
+interface,then all implementing classes must change.
+                         5.DEPENDENCY INVERSION PRINCIPLE
+Depend upon interfaces not upon concrete classes.
+
+
+                               
+
+
 
 
  
