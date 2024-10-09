@@ -326,35 +326,439 @@ This is a consideration of the good and bad in each sprint.
 (b)Stanup
 (c)Sprint Review
                                   SOLID PRINCIPLES
+Solid Principles ensure software is testable and maintainable.
+Since SOLID can be broken into other acronyms,it is termed an macronym.
+SOLID is applied after you've written the code and intend to refactor it.
+TDD...........Test Driven Development
+DDD...........Domain Driven Development
 1.S...........Single Responsibility Principle
 2.O...........Open Closed Principle
 3.L...........Liskov Substitution Principle
 4.I...........Interface Segregation Principle
 5.D...........Dependency Inversion Principle
                           1.SINGE RESPONSIBILITY PRINCIPLE
-A class should have one and only one reason to change.
+A class or function should have one and only one reason to change.
+Single Responsibility principle does not go with tight coupling(two details bound together such that it is difficult to change) but rather loose coupling.
+
 *This implies all classes must have a singular responsibility.This increases the amount of reusuability.
 Eg.
+1.
 public class Task{
       public void downloadFile(String location);
       public void parseTheFile(File file);
       public void persistTheData(Data data);
 }
 This violates Single Responsibility Principle because,the Task class is doing multiple things.
+2.
+public class Salary
+{
+    public double perDayRate { get; set; }
+  
+    public int numberOfDays { get; set; }
+
+    public double CalculateSalary()
+   {
+          return this.perDayRate * this.numberOfDays;
+   }
+
+   public double PrintSalary()
+    {
+          Console.WriteLine(this.perDayRate * this.numberOfDays);
+    }
+
+}
+To solve this according to Single Responsibility Principle,
+public class Salary
+{
+    public double perDayRate { get; set; }
+  
+    public int numberOfDays { get; set; }
+
+    public double CalculateSalary()
+   {
+          return this.perDayRate * this.numberOfDays;
+   }
+}
+
+public class PrintSalary
+{
+     public void PrintSalary(double salary)
+     {
+        Console.WriteLine(salary);
+     }
+
+}
+In the main class,
+class Program
+{
+   static void Main(string[] args)
+    {
+        CalculateSalary s = new CalculateSalary { numberOfDays = 20, perDayRate = 1000 };
+        var salary = s.CalculateSalary();
+        PrintSalary p = new PrintSalary();
+        p.PrintSalary(salary);
+        Console.ReadKey(true);
+
+   }
+
+}
+
                          2.OPEN CLOSED PRINCIPLE
 Software entities should be open for extension but closed for modification.
+The three approaches to achiveing this include:
+(a)Parameters
+public class DoOneThing
+{
+    public void Execute(string message)
+   {
+            Console.WriteLine(message)                    //By this the class is not fixed but flexible as it allows to accept other stuff for message.
+   }
+}
+(b)Inheritance
+public class DoOneThing
+{
+    public virtual void Execute()
+   {
+            Console.WriteLine("Hello World");                   //By this the class is not fixed but flexible as it allows to accept other stuff for message.
+   }
+}
+
+public class DoAnotherThing
+{
+    public override void Execute()
+   {
+            Console.WriteLine("Hey World");         //By use of the virtual keyword,this gives room for override that method hence no fixed outputs.
+}
+}
+(c)Composition/Injection
+public class DoOneThing
+{
+     private readonly MessageService _messageService;
+     private DoOneThing(MessageService messageDervice) => _messageService = messageService;
+    public virtual void Execute()
+   {
+            Console.WriteLine(_messageService.GetMessage());                   //By this the class is not fixed but flexible as it allows to accept other stuff for message.
+   }
+}
+A real life case study is packages and libraries where they are only extended and not modified.
+   A violation example is :
+public class DiscountCalculator
+{
+     double discountValue;
+
+     public double CalculateDiscount(int amount,string rule)
+{
+          if(rule.Equals("summer"))
+    {
+        discountValue = amount * 0.15;
+    }
+      else  if(rule.Equals("winter"))
+    {
+        discountValue = amount * 0.10;
+    }
+     else  if(rule.Equals("christmas"))
+    {
+        discountValue = amount * 0.30;
+    }
+      return discountValue;
+
+}
+}
+Writing A Unit Test,
+using Microsodt.VisualStudio.TestTools.UnitTesting;
+
+  class DiscountCalculatorShouldReturn 
+   {
+          public void TestSetUp()
+   {
+    discountCalculator = new DiscountCalculator();
+
+  }
+   public void FifteenPercentForSummer()
+{
+     var result = _discountCalculator.CalculateDiscount(100,"summer");
+     Assert.AreEqual(15.0,result);
+}
+
+  public void TenPercentForWinter()
+{
+     var result = _discountCalculator.CalculateDiscount(100,"winter");
+     Assert.AreEqual(10.0,result);
+}
+
+
+    }
+By modifying the class,the unit test must also be modified hence Open Closed Principle will be violted.
+To solve this,we'll use an interface.
+public class  DiscountCalculator
+{
+   double discountValue;
+   piblic List<IDiscountCalculate> _discountService;
+
+   public DiscountCalculator()
+{
+    _discountService = new List<IDiscountCalculate>();
+    _discountService.Add(new SummerDiscountCalculator());
+    _discountService.Add(new WinterDiscountCalculator());
+
+}
+
+public double CalculateDiscount(int amount,string rule)
+{
+    discountValue =  _discountService.Find(i => i.Rule(rule)).Calculate(amount);
+    return  discountValue;
+}
+
+
+}
+public interface IDiscountCalculate
+{
+   bool Rule(string RuleName);
+
+  double Calculate(int Amount);
+
+}
+
+public class SummerDiscountCalculator : IDiscountCalculate
+{
+  public bool Rule(string RuleName)
+{
+   return "summer".Equals(RuleName);
+}
+public double Calculate(int Amount)
+{
+  return  Amount * 0.15;
+}
+}
+
+public class WinterDiscountCalculator : IDiscountCalculate
+{
+  public bool Rule(string RuleName)
+{
+   return "winter".Equals(RuleName);
+}
+public double Calculate(int Amount)
+{
+  return  Amount * 0.10;
+}
+}
+By this,if you want to add a new property we add a class hence doing an extension and not modifying the original concrete class.
+For example,
+public class IDayDiscountCalculator : IDiscountCalculate
+{
+  public bool Rule(string RuleName)
+{
+   return "IDAY".Equals(RuleName);
+}
+public double Calculate(int Amount)
+{
+  return  Amount * 0.05;
+}
+}
+
                          3.LISKOV SUBSTITUTION PRINCIPLE
 Subtypes must be substitutable for their base types.
 *Use inheritance only when superclass is replacable by a sub class.
+     DETECTING VIOLATIONS IN CODE
+1.Type Checking with IS or AS in polymorphic code
+  foreach(var employee in employees)
+{
+    if(employeee is Manager)
+{
+    Helpers.PrintManager(employee as Manager);   //This even breaks the OpenClosed principle.
+    break;
+}
+    Helpers.PrintEmployee(employee);
+}
+
+Correction:
+  foreach(var employee in employees)
+{
+    employee.Print();
+}
+2.Null Checks
+
+  foreach(var employee in employees)
+{
+    if(employeee == null)
+{
+   Console.WriteLine("Employee not found");   //This even breaks the OpenClosed principle.
+    break;
+}
+    Helpers.PrintEmployee(employee);
+}
+3.NotImplementedException
+public interface INotificationService
+{
+   void SendText(string SmsNumber,string message);
+   void SendEmail(string to,string from,string subject,string body);
+}
+
+public class SmsNotificationService : INotificationService
+{
+    public void SendText(string SmsNumber,string message){
+   throw new NotImplementedException();
+}
+   void SendEmail(string to,string from,string subject,string body){
+
+   //Code to send Email
+}
+}
+Example 2:
+   public class Rectangle
+{
+  public virtual int Height { get; set;}
+  
+  public virtual int Width { get; set;}
+
+}
+public class Square : Rectangle
+{
+    private int _height;
+    private int _width;
+
+public override int Height
+{
+    get
+{
+   return _height;
+}
+   set
+{
+    _width = value;
+    _height = value;
+}
+
+
+public override int Width
+{
+    get
+{
+   return _width;
+}
+   set
+{
+    _width = value;
+    _height = value;
+}
+}
+
+}
+}
+
+public abstract class Shape
+{
+    
+}
+
+public class AreaCalculator
+{
+    public static int CalculateArea(Rectangle r)
+{
+     return r.Height * r.Width;
+}
+
+    public static int CalculateArea(Square s)
+{
+     return r.Height * r.Height;
+}
+}
+Writing the Unit Tests,
+public class TestAreaShouldReturn
+{
+public void Sixfor2*3Rectangle()
+{
+     var myRectangle = new Rectangle { Height = 2; Width = 3;};
+     var result = AreaCalculator.CalculateArea(myRectangle);
+     Assert.AreEqual(6,result);
+
+}
+
+public void Ninefor3*3Square()
+{
+     var mySquare = new Square { Height = 3};
+     var result = AreaCalculator.CalculateArea(mySquare);
+     Assert.AreEqual(9,result);
+
+}
+
+public void TwentyFourfor4*6RectangleFromSquare()
+{
+      Rectangle newRectangle = new Square();
+      newRectangle.Height = 4;
+      newRectangle.Width = 6;
+      var result = AreaCalculator.CalculateArea(newRectangle);
+      Assert.AreEqual(24,result);
+
+}
+
+}
                          4.INTERFACE SEGREGATION PRINCIPLE
 The dependency of one class to another should depend on the smallest possible interface.
 *Keep interfaces as small as possible because if you've got alot of methods in an inteface,then once you add another method in an 
 interface,then all implementing classes must change.
+*Client is the code interacting with an instance of the interface.
+In other words,
+Classes should not be forced to use methods they'll not need.
+         DETECTING   INTERFACE SEGREGATION VIOLATION
+1.Large Interfaces
+2.NotImplemtedException
+3.Client code that uses a small subser of a large interface.
+-ISP is related to LSP in that large interfaces will be difficult to use as child classes to replace base classes.
+-ISP is related to SRP in that large interfaces will most likely have numerous responsibllity.
+Hence,ISP is directly related to SRP and LSP.
+
+public interface nat(){
+   public void IFly();
+
+   public void IDrive();
+
+}
+
+public class car : nat
+{
+    public void IFly(){
+    Console.WriteLine("Does a car fly?");
+}
+
+    public void IDrive(){
+    Console.WriteLine("Does a car drive?");
+}
+}
+To solve using ISP,
+
+public interface nat(){
+   public void IFly();
+}
+
+public interface nati(){
+   public void IDrive();
+}
+
+public class car : nati{
+ 
+    public void IDrive(){
+    Console.WriteLine("Does a car drive?");
+}
+}
+By this,only required interfaces are used.
+
                          5.DEPENDENCY INVERSION PRINCIPLE
 Depend upon interfaces not upon concrete classes.
+A high level class should not depend on a low-level class.
+Low-level dependencies include:
+(a)Database
+(b)File System
+(c)Email
+(d)Web APIs 
+(e)Configuration setup
+(f)Clock
 
+These five principles are associated with Object Oriented Programming.
+*Abstraction deal with interfaces and abstract classes.
+Hence,high-level classes should depend on abstractions.
 
-                               
+Recap at Infragistics(YouTube Channel on Solid)                          
 
 
 
