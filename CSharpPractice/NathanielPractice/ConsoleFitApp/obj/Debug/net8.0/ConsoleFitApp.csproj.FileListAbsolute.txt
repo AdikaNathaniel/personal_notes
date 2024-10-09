@@ -1,0 +1,15 @@
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\bin\Debug\net8.0\ConsoleFitApp.exe
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\bin\Debug\net8.0\ConsoleFitApp.deps.json
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\bin\Debug\net8.0\ConsoleFitApp.runtimeconfig.json
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\bin\Debug\net8.0\ConsoleFitApp.dll
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\bin\Debug\net8.0\ConsoleFitApp.pdb
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ConsoleFitApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ConsoleFitApp.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ConsoleFitApp.AssemblyInfo.cs
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ConsoleFitApp.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ConsoleFitApp.sourcelink.json
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ConsoleFitApp.dll
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\refint\ConsoleFitApp.dll
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ConsoleFitApp.pdb
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ConsoleFitApp.genruntimeconfig.cache
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanielPractice\ConsoleFitApp\obj\Debug\net8.0\ref\ConsoleFitApp.dll

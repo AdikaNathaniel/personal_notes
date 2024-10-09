@@ -1,0 +1,15 @@
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\bin\Debug\net8.0\FitnessApp.exe
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\bin\Debug\net8.0\FitnessApp.deps.json
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\bin\Debug\net8.0\FitnessApp.runtimeconfig.json
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\bin\Debug\net8.0\FitnessApp.dll
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\bin\Debug\net8.0\FitnessApp.pdb
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\FitnessApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\FitnessApp.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\FitnessApp.AssemblyInfo.cs
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\FitnessApp.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\FitnessApp.sourcelink.json
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\FitnessApp.dll
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\refint\FitnessApp.dll
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\FitnessApp.pdb
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\FitnessApp.genruntimeconfig.cache
+C:\Users\ACER\Desktop\PersonalGrowth\CSharpPractice\NathanPractice\FitnessApp\obj\Debug\net8.0\ref\FitnessApp.dll

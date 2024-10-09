@@ -1,0 +1,83 @@
+ The difference between C#  And .NET
+1.C# is a programming language whereas .Net is a framework for building different applications using languages of F# and C#.
+(Like Django for Python)
+(Like Spring,Hibernate and Springboot for Java)
+(Like Laravel for PHP)
+2.".NET" consists of a class library and a Common Language Runtime(does a conversion to machine instructions that your device can understand).
+3.C# came in 2001 to combine C++ and Visual Basic advantages.
+4.C# supports procedural and object oriented programming.
+5.C# is a statically typed language meaning the type of variables is defined at compile time.(Hence,compiled language).
+Dynamically typed languages is at Runtime(Hence,interpretated language).Eg is python.
+6.C# is supported by Microsoft.
+.NET 8 was released in 2023.
+For 3D games,Unity is used.
+For machine learning,python is used.
+Console applications interact with a user via the console or terminal.
+7.C# is used for web applications,cloud applications,desktop applications,games,AI-powered languages and mobile
+applications and Windows Services.
+Applications of C# are developed on .NET.
+.Net 6 is cross platform in that applications created with it can run on Windows,Linux
+and Mac.
+Aside C#,dotnet supports F# and Visual Basic.
+C# is grouped into C# 10 and C# 11 working togethere with .Net6 and .Net7.
+C# is the general name however,C# 10 and .Net 6 were released in 2021 with # 11 and .Net 7 releaed in 2022.
+Hence,C# 10 sought to improve the simplicity of code with ,C# 11 making further improvements to C# 10. 
+8.C# however is the main language for .Net development.
+C# is type-safe meaning that on compilation,the compiler checks that all data types are
+properly used otherwise,an error will be flaged.
+9.C# is familiar to C,C++,Java and JS.
+10.C# 1.0..............2002
+C# 1.1..............2003
+C# 2.0..............2005
+C# 3.0..............2007
+C# 4.0..............2010
+C# 5.0..............2012
+C# 6.0..............2015
+C# 7.0..............2017
+C# 8.0..............2019
+C# 9.0..............2020
+C# 10.0..............2021
+Compiling C# 1.0 today,it'll still compile.
+Visual Studio 2022 won't work on Linux but Vscode will.
+Visual Studio 2022(Community,Professional and Enterprise Edition) is the flagship IDE.
+*Intellisense
+*IntelliQuote..........Other quotation that comes up when you type one.
+                                            PROGRAMMING NOTES
+1.Strings work with " ".
+2.Build is checking for errors in  the application hence compiling it without running it.
+3.Console.WriteLine("Please Enter Your Name");
+string name = Console.ReadLine();
+Console.WriteLine("Hello " +name);
+4.The generated files are:
+(a)Project
+(b)Solution................A grouping of all available projects
+(c)Executable file
+*The sln file contains references that a project contains.
+5.To manually run this console app,
+-Open Project folder
+-Open  Bin->Debug->net8.0 folders
+-Type "cmd" in the address bar
+-Type the ".exe" say "AdikaPractice.exe"
+6.Debugging is investigating code for errors hence identifying breakpoints. 
+When a breakpoint is reached,debugger comes in allow a dev to check for errors.
+7.Compilation happens before execution.
+8.A breakpoint can be introduced in code via Visual Studio where at that particulat breakpoint,
+only the code above the breakpoint runs.
+-Click continue to get the application running as normal.
+*Use the "step over" to get code to run line by line after introducing a breakpoint.
+SDK consists of CLI and libraries.
+9.Creating A CSharp application for console,
+-dotnet new console -n "First Program"........Create a new console app with name "First Program"
+Others:
+-dotnet build................This is to compile an application
+-dotnet run
+For a CLI app,dotnet run will do however for a web app,dotnet watch will do.
+10.Using C# Dev Kit,
+-Ctrl + Shift + P for the Command Palette
+-.NET Project
+-Console App
+-Give a name and select a location
+-Create Project
+Beneath is a Solution Explorer from which program.cs and  other project files can be obtained.
+Right Click on the folder app name you gave to build the project.
+
