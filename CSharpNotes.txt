@@ -72,7 +72,7 @@ Others:
 -dotnet build................This is to compile an application
 -dotnet run
 For a CLI app,dotnet run will do however for a web app,dotnet watch will do.
-10.Using C# Dev Kit,
+10.Using C# Dev Kit which was intended to give Visual Studio experience in VsCode,
 -Ctrl + Shift + P for the Command Palette
 -.NET Project
 -Console App
@@ -80,4 +80,175 @@ For a CLI app,dotnet run will do however for a web app,dotnet watch will do.
 -Create Project
 Beneath is a Solution Explorer from which program.cs and  other project files can be obtained.
 Right Click on the folder app name you gave to build the project.
+11.CSharp Documentation on Microsoft Docs is a good way to learn C#.
+12.C# Statements:
+(a)Always end with semi-colon like:
+Console.WriteLine("Hello");
+(b)Whitespaces do not matter. 
+13.Identifiers like name
+(a)Identifiers must start with a letter or an underscore.It can't start with a number.
+14.Comments are given as "//" or "/*  */".......Single-line and Multi-line comments
+15.C# Keywords:
+(a)int         
+(b)in
+(c)class
+(d)using
+(e)while
+(f)new
+(g)null
+(h)if
+(g)else
+(i)case
+(j)ref
+(h)return
+(k)lock
+(l)long
+(m)string
+(n)struct
+(i)enum
+(j)const.........for immutable values
+const decimal age = 0.07;
+(h)void
+16.Variables can be integer,string or dates.
+-int age;..........type and identifier
+age = 25;
+Console.WriteLine(age):
+-CamelCase is usually used like firstName
+17.string lastName = Console.ReadLine();
+This is to take user input.
+18.C# is a strongly typed language in that every variable must have a type.
+19.DataTypes in C# are:
+(a)Predefined Types
+-bool
+-int(int32 for 4 bytes)
+-float
+-double
+-decimal
+-char
+-byte............Takes values between 0 and 255
+-short
+-object
+-string 
+(b)User-defined Types
+Data Types ensure type safety in that:
+int c = 3;
+c= true;............This will lead the code to break.
+int months = 12, bonus =100;............Notice both are of the same type.
+byte numberOfEmployees = 124;
+string(" ") is a collection of char(' ').
+string nat = string.Empty; IS SAME AS  string nat = " ";
+20.C# Operators:
+-Arithmetic Operators
+int month =3;
+month = month +1;
+month +=1;
+-Equality Operators
+-Logical Operators
+-Assignment Operators
+21.Default values are false for bool and 0 for int.
+int nait = int.MaxValue;
+int nati = int.MinValue;
 
+char myChar = 'a';
+bool isWhiteSpace = char.IsWhiteSpace(myChar);
+bool isDigit = char.IsDigit(myChar);
+bool isPunctuation = char.IsDigit(myChar);
+
+char userSelection = 'a';
+char upperVersion = char.ToUpper(userSelection);
+
+bool isDigit  = char.IsDigit(userSelection);
+bool isLetter  = char.IsLetter(userSelection);
+22.DateTime and TimeSpan are  used for Date And Time.
+
+DateTime employeeStart = new DateTime(2023,03,12);
+Console.WriteLine(employeeStart);
+DateTime  today = DateTime.Today;
+Console.WriteLine(today);
+
+DayOfWeek day = someDateTime.DayOfWeek;
+Console.WriteLine(day);
+DayOfWeek twoDaysLater = someDateTime.AddDays(2);
+Console.WriteLine(twoDaysLater);
+bool isDST = someDateTime.IsDaylightSavingTime();
+Console.WriteLine(isDST);
+                                //Year,Month,Day,Hours,Minutes,Seconds
+*DateTime employeeStart = new DateTime(2023,03,12,14,30,0);
+Output is : 3/12/2023 2:30:00 PM
+
+
+DateTime exitDate = new DateTime(2025,02,9);
+Console.WriteLine(exitDate);
+2/9/2025 12:00:00 AM
+
+DateTime exitDates =  exitDate.AddDays(1);
+Console.WriteLine(exitDates);
+2/10/2025 12:00:00 AM
+
+DateTime currentDate =  DateTime.Now;
+Console.WriteLine(currentDate);
+This gives the immediate Date and Time.
+
+bool areIn =  currentDate.IsDaylightSavingTime();
+Console.WriteLine(areIn);
+This gives whether or not it is day or not.
+
+Console.WriteLine(startHour.ToLongDateString());
+*Wednesday, October 9, 2024
+Console.WriteLine(endHour.ToShortTimeString());
+*3:53 AM
+
+Changing Between Types
+(a)Implicit Conversion
+int a =123456789
+long l = a;
+//A smaller data type fitting into a larger datatype.
+//A long cannot be put in an int.This is where explicit casting comes in. 
+(b)Explicit Conversion....Casting
+double d = 123456789.980;
+int a = (int) d;
+(c)Helpers
+Implicit Typing is causing the compiler to determine the data type on it's own.
+Eg 
+  var a = 123;
+  var b = true;
+  var c = 11.0;
+C# looks at the values on the right and decides the type.
+For developers,this makes code less readable.
+Explicit Typing involves using the exact datatype.
+int a = 123;
+bool b = true;
+double d = 11.0;
+23.C# is a strongly typed language.
+24.Decisions consist of "if" or "switch" and Iterations consist of  "while","for".
+25.Relational Operators are:
+(a) ==
+(b) !=
+(c) > or <
+(d) >= or <=
+26.Logical Operators:
+- &&
+- ||
+27.
+int age = 23;
+bool a = age == 23;
+Console.WriteLine( "Age is 23" +a);
+//This gives true.
+
+int age = 23;
+bool b = age > 23;
+Console.WriteLine( "Age is 23" +a);
+//This gives false.
+28.
+bool  c = (age >= 18) &&  (age <= 65);
+Console.WriteLine("Age is between 18 and 65" +c);
+Result is true.
+29.
+if(condition).................This always works with a condition.
+else if(condition)
+{
+}
+else
+{
+}
+30.
