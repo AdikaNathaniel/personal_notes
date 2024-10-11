@@ -799,3 +799,42 @@ int wage = employee.ReceiveWage();
 
 *var bethany = new Employee("Bethany","Smith","nathanieladikajnr@gmail.com",new DateTime(1979,1,16),25);
 Above is implicit typing shown.
+*Classes are termed reference types.
+51.Types can be categorised as:
+(a)Value Types
+(b)Reference Types......Eg is strings
+An exapmle of custom type is enumeration and struct.
+       VALUE TYPES
+*int,double,float,char
+*They have a fixed size which is allocated on the stack.
+Hence,for:
+int a = 1;
+int b = 3;
+a=1 and b=3 is kept on the stack.
+
+int a = 42;
+int aCopy = a;
+
+Console.WriteLine(a);
+Console.WriteLine(aCopy);
+Both give an output of 42.
+Moreso,
+aCopy = 100;
+
+Console.WriteLine(a);
+Console.WriteLine(aCopy);
+a will be 42 and aCopy will be 100.
+
+    REFERENCE TYPES
+*These are allocated on the heap.
+*Classes and strings are reference types.
+object o = new object();
+The heap contains a reference to the object "o" and not "o" itself.
+
+Employee testEmployee = bethany;
+testEmployee.firstName = "Gill";
+testEmployee.DisplayEmployeeDetails();
+bethany.DisplayEmployeeDetails();
+
+By this,both testEmployee and bethany have their firstNames changed to Gill.
+This happens because both are pointing to the same object on the heap.
