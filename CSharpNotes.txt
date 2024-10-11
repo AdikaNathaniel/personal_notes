@@ -794,3 +794,8 @@ employee.firstName = "Bethany";
 int wage = employee.ReceiveWage();
 *Constructors can also be overloaded.
 *Namespace is a grouping of classes.
+
+*Employee bethany = new Employee("Bethany","Smith","nathanieladikajnr@gmail.com",new DateTime(1979,1,16),25);
+
+*var bethany = new Employee("Bethany","Smith","nathanieladikajnr@gmail.com",new DateTime(1979,1,16),25);
+Above is implicit typing shown.
