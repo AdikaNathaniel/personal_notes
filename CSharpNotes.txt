@@ -252,3 +252,545 @@ else
 {
 }
 30.
+Console.WriteLine("Enter Age Of The Candidate");
+int aged = int.Parse(Console.ReadLine());
+//This ensures that input received is converted to integer.
+31.Switch Statements
+switch(expression)
+{
+   case constant expression 1
+   break;
+    
+   case relational expression 2
+   break;
+   
+  default:
+  break;
+}
+Eg 1
+var age = 19;
+
+switch(age)
+{
+   case < 18:
+     Console.WriteLine("Young");
+   case > 26:
+     Console.WriteLine("Old");
+   case 23:
+     Console.WriteLine("Old");
+   default:
+     Console.WriteLine("Perfect Age");
+   break;
+}
+
+var age = 19;
+
+switch(age)
+{
+   case < 18:                            //If either of these is true,run this.
+   case > 86:
+     Console.WriteLine("Young");
+   break;
+   case > 26:
+     Console.WriteLine("Old");
+    break;
+   case 23:
+     Console.WriteLine("Old");
+    break;
+   default:
+     Console.WriteLine("Perfect Age");
+   break;
+}
+
+In relation to if statements,
+var age = 19;
+
+if(age < 18)
+{
+   Console.WriteLine("Young");
+}
+else if(age > 26)
+{
+   Console.WriteLine("Old");
+}
+else
+{
+  Console.WriteLine("Perfect Age");
+}
+
+-Switch does not work for double and float.
+-Switch works for constant expressions and relational expressions.
+Eg 2
+Console.WriteLine("Choose the action you want to do");
+Console.WriteLine("1.Add employee");
+Console.WriteLine("2.Update employee");
+Console.WriteLine("3.Delete employee");
+string selected = Console.ReadLine();
+
+switch(selected)
+{                           //If either of these is true,run this.
+   case "1":
+     Console.WriteLine("Adding employee");
+    break;
+   case "2":
+     Console.WriteLine("Updating employee");
+     break;
+   case "3":
+     Console.WriteLine("Deleting employee");
+    break;
+   default:
+     Console.WriteLine("Invalid Input");
+   break;   
+}
+This technology is deployed in SMS.
+32.Iterations are while,do while and for loop.
+1.while(boolean condition expression)
+{
+   //statement
+}
+Eg 1:
+int i = 0;
+while(i < 10)
+{
+ Console.WriteLine(i);
+ i++;
+}
+Eg 2:
+Console.WriteLine("Enter A Value");
+int max = int.Parse(Console.ReadLine());
+int i = 0;
+
+while(i < max)
+{
+  Console.WriteLine(i);
+  i++;                           //Or i--;
+}
+Console.WriteLine("Loop finished");
+Integrating while statements with switch statements,
+Console.WriteLine("Choose the action you want to do:");
+Console.WriteLine("1. Add employee");
+Console.WriteLine("2. Update employee");
+Console.WriteLine("3. Delete employee");
+Console.WriteLine("99. Exiting Application");
+
+string selectd = Console.ReadLine();
+
+while (selectd != "99")
+{
+    switch (selectd)
+    {
+        case "1":
+            Console.WriteLine("Adding employee");
+            break;
+        case "2":
+            Console.WriteLine("Updating employee");
+            break;
+        case "3":
+            Console.WriteLine("Deleting employee");
+            break;
+        default:
+            Console.WriteLine("Invalid Input");
+            break;
+    }
+
+    Console.WriteLine("\nChoose the action you want to do:");
+    Console.WriteLine("1. Add employee");
+    Console.WriteLine("2. Update employee");
+    Console.WriteLine("3. Delete employee");
+    Console.WriteLine("99. Exiting Application");
+
+    selectd = Console.ReadLine();
+}
+
+Console.WriteLine("Closing App");
+33.Nested While Loops
+int i =0;
+int j =0;
+
+while(i <10)
+{
+   while(j <10)
+{
+   Console.WriteLine("i:" +i + "j:" +j);
+   j++;
+}
+  j=0;
+  i++;
+}
+34.do{
+ //statements
+}
+while(boolean conditional statement)
+Eg:
+int i=10;
+
+do{
+  Console.WriteLine("Value of i is " +i);
+  i++;
+}while(i<10);
+An output of 10 is generated due to the do statement present.
+35.for(initialization;boolean;increment)
+{
+  //statements
+}
+Eg
+int sum = 0;
+for(int i=0; i < 10;i++)
+{
+   Console.WriteLine("Nat");
+}
+Console.WriteLine("Finito");
+36.Continue is used to loop out of a condition and restart the for loop. 
+
+Console.WriteLine("Enter A Value");
+int max = int.Parse(Console.ReadLine());
+
+for(int i=0; i< max;i++)
+{
+   if( i ==5)
+{
+ Console.WriteLine("Finito" + i+ "was found");
+ continue;
+}
+ Console.WriteLine(i);
+}
+Assuming 10 is entered,
+Output is that 0,1,2,3,4,"Finito 5  was found",6,7,8,9
+
+Using break statement,
+Console.WriteLine("Enter A Value");
+int max = int.Parse(Console.ReadLine());
+
+for(int i=0; i< max;i++)
+{
+   if( i ==5)
+{
+ Console.WriteLine("Finito" + i+ "was found");
+ break;
+}
+ Console.WriteLine(i);
+}
+Assuming 10 is entered,
+Output is that 0,1,2,3,4,"Finito 5 was found" after which the for loop does not run again.
+37.Methods are for code reusability.
+Functions are also called subroutines.
+Variable in methods are parameters.
+Value in methods are arguments.
+Declared within class or struct.
+General Structure or Method Signature:
+"access modifier" "return type" "Method name"(Parameters)
+{
+   //Method arguments
+} 
+Eg 1 public void Nat(int nat)
+{
+//Statements
+}
+Eg 2
+ public int Nat(int nat,int nathan)
+{
+ return nat + nathan;
+}
+Only void has no return types.
+Eg:
+ public void Display(int nat,int nathan)
+{
+  int sum = nat + nathan;
+  Console.WriteLine(sum);
+}
+
+Invoking a method is:
+Display(3,52);
+38. Example of method is:
+int amount = 1234;
+int months = 12;
+
+CalculateYearlyWage(amount,months);    //Invoking or Calling the method
+
+static void CalculateYearlyWage(int monthlyWage,int numberOfMonthsWorked)
+{
+   Console.WriteLine($"Yearly Wage : {monthlyWage *numberOfMonthsWorked}");
+}
+Another Example of method is:
+int amount = 1234;
+int months = 12;
+int yearlyWage = CalculateYearlyWage(amount,months); 
+Console.WriteLine($"Yearly Wage : {yearlyWage}");
+
+static void CalculateYearlyWage(int monthlyWage,int numberOfMonthsWorked)
+{
+   return  monthlyWage * numberOfMonthsWorked;
+}
+
+using AdikaPractice;................This is a namespace.
+
+Calling the correct method from another file involves:
+(a)Method name
+(b)Parameter Types And Arguments
+(c)Number Of Parameters
+Method Overloading is where some methods in a class have the same name
+but vary by different number of parameters or different names of parameters.
+Eg.
+public static void DisplaySum(int a,int b)
+{
+}
+
+public static void DisplaySum(int a,int b,int c)
+{
+}
+Display(3,54)................By this,the first method is invoked.
+Another Classical Example Is:
+ public  class Utilities
+    {
+   
+       public static int CalculateYearlyWage(int monthlyWage,int numberOfMonthsWorked)
+   {
+    if(numberOfMonthsWorked == 12)
+        return  monthlyWage *  (numberOfMonthsWorked + 1);
+
+    return monthlyWage *  numberOfMonthsWorked;
+     }  
+
+
+
+
+     public static int CalculateYearlyWage(int monthlyWage,int numberOfMonthsWorked,int bonus)
+   {
+    if(numberOfMonthsWorked == 12)
+        return  monthlyWage *  (numberOfMonthsWorked + bonus);
+
+    return monthlyWage *  numberOfMonthsWorked + bonus ;
+     }        
+    }
+39.Variable Scope
+-Global variable scope
+-Local variable  scope
+
+public static double SomeMethod()
+{
+   double value = 0.4;             //Local Variable hence using it inside another method won't work
+                                     Local variables are defined inside a method whilst global are outside a 
+                                     method.
+  return value;
+}
+40.Optional Parameters
+This is achieved by specifying a default value for one or more parameters.
+Eg:
+public int AddNumbers(int a,int b,int c= 100)
+{
+   int sum = a + b + c;
+   return sum;
+}
+
+AddNumbers(10,29)
+AddNumbers(10,29,34)    //This will override the default value of c given above.
+41.Named Arguments
+Not required to follow order of paramenters.
+These work with ":".
+public static int AddNumbers(int a,int b)
+{
+
+}
+AddNumbers(b:10,a:20)
+41.Expression-bodied syntax(Lambda Expressions)
+public static int CalculateYearlyWage(int age,string name) => Console.WriteLine(age * name);
+42.Main Method
+The entry point of any app which is implicitly created.
+using System;
+
+namespace Console{
+  public class Program
+{
+    static void Main(string[] args)
+{
+      Console.WriteLine("Hello World");
+}
+}
+}
+This is the program.cs of .NET5 whereas that of .NET6 is given as:
+  Console.WriteLine("Hello World");
+43. "string" keyword.Note that it is in small letter not a capital letter.
+
+string myString = "Nathaniel"
+
+int nat = myString.Length;
+ Console.WriteLine(nat);
+string upper =  myString.ToUpper();
+ Console.WriteLine(upper);
+string lower =  myString.ToLower();
+ Console.WriteLine(lower);
+bool b = myString.Contains("than");
+  Console.WriteLine(b);
+string sa =  myString.Replace("a","b");
+ Console.WriteLine(sa);
+This replaces all "a's" in the word with "b".
+string sat =  myString.Substring(0,3);
+ Console.WriteLine(sat);
+Output:Nat
+This starts at the  starting point of 0 and takes 3 characters of the string.
+String Concatenation
+Eg 1:
+string s1 = "Nat ";
+string s2 = "is cool";
+string s3 = s1 + s2;
+ Console.WriteLine(s3);
+Output : Nat is cool
+Eg 2:
+Using String.Concat
+string s1 = "Nat ";
+string s2 = "is cool";
+string s3 = String.Concat(s1,s2);
+ Console.WriteLine(s3);
+Eg 3:
+But  two + between the variable name and two " between the strings.
+string name = "Nat"
+int age = 34;
+string greeting = "Hello" + name + " you are" + age + " years ";
+Eg 4:
+Using string.Format,
+string name = "Nat"
+int age = 34;
+string greeting = string.Format("Hello {0}, you are {1}years", name,age);
+ Console.WriteLine(greeting);
+Eg 5:
+Using string interpolation,
+string name = " Nat ";
+int age = 34;
+string greeting = $"Hello {name}, you are {age} years";
+ Console.WriteLine(greeting);
+NB: name.Trim().ToLower()...........This removes beginning and ending white spaces.
+This is termed method chaining.
+44.Escape Characters
+\n.........This is a new line
+\t........This is a tab like a long space
+To represent a file path,
+string filepath = "C:\\Documents\\readme.txt";]
+A substute is to use verbatim strings say:
+string verbatimfilepath = @"C:\Documents\readme.txt";
+
+string namesa = "Nathaniel";
+string namesan = "Adika";
+
+string displayName = $"Welcome! \n {namesa} \t {namesan}";
+Console.WriteLine(displayName);
+
+string market = "Baking the best \"pie \" ever;
+Console.WriteLine(market);
+Output is = Baking the best "pie " ever
+45.Testing strings for equality,
+string firstName = "Nathaniel";
+bool b1 = firstName == "Nathan";
+Console.WriteLine(b1);
+bool b2 = firstName.Equals("Nathan");
+Console.WriteLine(b2);
+46.Parsing String To Other Types
+string w = Console.ReadLine();
+double wage = double.Parse(w);
+(A)
+string enteredText = "true";
+if(bool.TryParse(enteredText, out bool b))
+{
+     Console.WriteLine($"The value is {b});  
+}
+
+Console.Write("Enter Wage");
+string wage = Console.ReadLine();
+
+int mega = int.Parse(wage);
+Console.WriteLine(mega);
+(B)
+Using TryParse,
+Console.Write("Enter The Wage");
+string wage = Console.ReadLine();
+
+int wageValue;
+
+if(int.TryParse(wage, out wageValue))
+{
+  Console.Write("Parsing Success" +wageValue);
+}else{
+  Console.Write("Parsing Failed");
+}
+TryParse checks if user will enter an expected type say int otherwise,the else statement
+will be used.Hence,the "out" keyword is used to be where the if parsing is succesful,
+the value will be stored and exited.
+Doing Parsing for dates,
+string hireDateString = "12/11/2025";
+DateTime hiredDate = DateTime.Parse(hireDateString);
+ Console.Write("Parsed Date" +hiredDate);
+47.Working With Classes
+Classes are used to represent real world models.
+48.Custom Types are:
+(a)Class................A blueprint of an object.
+An object is an instance of a class.
+(b)Struct
+Eg:
+public class MyClass
+{
+    public int a;
+    public string b;
+
+
+   public void MyMethod()
+{
+   Console.WriteLine("Nathaniel");
+}
+}
+         CONTENTS OF A CLASS
+1.Fields
+*Fields are class-level variables as shown in a and b above.
+2.Methods
+3.Properties........These tend to wrap fields.
+4.Events
+5.Access Modifiers like 
+-public.................This makes a method available to all
+-private................The method is only accessible within the class.
+-protected...............The method is available to class and it's children via inheritance
+public class Employee
+{
+  public string firstName;
+  public int age;
+
+  public void PerformWork()
+{
+
+}
+}
+NB: Both keywords of class and string are in lowercase.
+49.Creating Objects(an instance of a class or instantiation) is:
+Employee employee = new Employee();
+*new keyword is key for creating an object.
+*Variable creation to store object is on the left and object creation is on the right.
+50.Constructor is a special method for creating objects.
+Constructor has no return type and same name as the class.
+public class Employee
+{
+   public string firstName;
+   public int age;
+
+  public Employee(strng name,int ageValue)
+{
+          firstName = name;
+          age = ageValue;
+
+}
+}
+Invoke the constructor by:
+Employee employee = new Employee("Nat",35);
+A default constructor will always be created without we necessarily creating it.
+C# creates the default constructor when we have no constructor defined.
+public class Employee
+{
+    public Employee()
+{
+
+}
+}
+The above is also termed a parameterless constructor.
+Via objects,methods and fields can be easily assessed.
+Employee employee = new Employee();
+employee.PerformWork();
+employee.firstName = "Bethany";
+int wage = employee.ReceiveWage();
+*Constructors can also be overloaded.
+*Namespace is a grouping of classes.
