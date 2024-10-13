@@ -343,7 +343,7 @@ switch(selected)
    break;   
 }
 This technology is deployed in SMS.
-32.Iterations are while,do while and for loop.
+32.Iterations are while,do while and for loop and foreach loop.
 1.while(boolean condition expression)
 {
    //statement
@@ -433,13 +433,19 @@ An output of 10 is generated due to the do statement present.
 {
   //statements
 }
-Eg
+Eg 
 int sum = 0;
 for(int i=0; i < 10;i++)
 {
    Console.WriteLine("Nat");
 }
 Console.WriteLine("Finito");
+
+Moreso,for a foreach loop,
+foreach(int i in empIds )
+{
+    Console.WriteLine(i);
+}
 36.Continue is used to loop out of a condition and restart the for loop. 
 
 Console.WriteLine("Enter A Value");
@@ -838,3 +844,665 @@ bethany.DisplayEmployeeDetails();
 
 By this,both testEmployee and bethany have their firstNames changed to Gill.
 This happens because both are pointing to the same object on the heap.
+52.Passing Parameters Involves:
+(a)By Value.............Default we always use
+public int AddNumbers(int a,int b)
+{
+   int sum = a + b;
+   return sum;
+}
+
+int a = 33;
+int b = 44;
+AddNumbers(a,b);
+*A Copy is made here
+*No change of the original copy
+(b)By Reference...........this involves using the "ref" keyword
+*A reference to the value is passed
+*No Copy is made
+*There's always a change of the original copy
+public int AddNumbers(int a,ref int b)
+{
+   int sum = a + b;
+   return sum;
+}
+
+int a = 33;
+int b = 44;
+AddNumbers(a,ref b);
+53.Out Keyword
+The value for out must be initialized before leaving the method hence done inside the 
+method.
+Eg1:
+public static int AddNumbers(int a,out int b,out int c)
+{
+   b= 10;
+   int sum = a + b;
+   c = sum/10;
+   return sum;
+}
+Eg2:
+public int CalculateBonus(int bonus,out int bonusTax)
+{
+   bonusTax = 0;
+   if(numberOfHoursWorked > 10)  
+      bonus *=2;
+  Console.WriteLine($"The employee bonus Tax is {bonusTax}");
+
+}
+54.String is a reference types.
+*Strings are immutable in that once you make a change to a string or an edit,
+a new string is created on the heap hence original is always changed.
+*No Copy is made for example,
+1.
+string name = "bethany";
+string anotherName = name;
+name += " smith";
+2. string upperCaseName = name.ToUpper();
+You'll find out that upperCaseName and name vary.
+By this, name becomes bethany smith and anotherName remains bethany
+55.Using the string Builder,
+string firstName = "Bethany";
+string  lastName = "Smith";
+
+StringBuilder builder = new StringBuilder();
+builder.Append("Last Name :");
+builder.AppendLine(lastName);
+builder.Append("First Name :");
+builder.AppendLine(firstName);
+string result = builder.ToString();
+
+Console.WriteLine(result);
+The output is Bethany Smith.
+55.Custom Types in C#
+(a)Class
+(b)Struct
+(c)Enumeration
+(d)Interface
+(e)Delegate
+NB: 
+*Classes,Interfaces and Delegates are Reference Types.
+*Enumeration And Structs are Value Types.
+56.Generally,.NET types can be grouped into Value Data Types and Reference Data Types
+(A)Value Data Types
+*Predefined Types:Integer And Boolean
+*User-defined Types:Enumeration And Struct
+
+(B)Reference Data Types
+*Predefined Types:String And Array
+*User-defined Types:Class And Interface 
+Hence,enumeration and struct are user-defined custom types.
+57.
+*Base Class Library is used when writing C# applications.
+*Custom Types in .NET
+-Directory
+-HttpClient
+-Brush
+-Exceptions
+-DbConnection
+-File
+-Attachment
+-Enumerable
+-Icon
+-BitMap
+-Debug
+-DataAdapter
+-List<T>
+Organzing types in namespaces include:
+System:
+-System.Web
+-System.Collections
+-System.Windows
+System.IO:
+-System.IO.FileSystem
+-System.IO.Compression
+The "using" keyword is to bring types within a specified namespace.Eg using System.IO
+*Global Usings include:
+-global using global :: System;
+-global using global :: System.IO;
+58.JSON is JavaScript Object Notation which is a way or format to transmit data. 
+*this is a keyword to point to objects.
+59.Enumerations
+Eg 1:
+enum EmployeeType
+{
+    Sales,    //0
+    Manager,  //1
+    Researcher,  //2
+    StoreManager,  //3
+}
+60.Struct is a value type custom data structure.
+It contains members and other methods.
+Struct is a lightweight class created on the stack and not on the heap like classes are.
+struct WorkTask
+{
+   public string description;
+   public int hours;
+
+   public void PerformTask()
+{
+    Console.WriteLine($"Task {description} of {hours} has been given");
+}
+}
+
+WorkTask task;
+task.description = "Hi Nat";
+task.hours = 3;
+task.PerformTask();
+61.Whilst Classes are reference types,enums and structs are custom types.
+62.Classes are organised into namespaces.
+namespace Bethany
+{
+   public Class Employee
+{
+
+}
+}
+63.Notice that for every created class in the project,the namespace is AdikaPractice
+that is 
+namespace AdikaPractice
+{
+
+
+}
+In the program.cs,"using AdikaPractice" is used to call the namespace.
+63.Static Keyword
+*The method or variable is not instantiated but shared by all objects. 
+*Static implies defining an item on the class level and not the object level.
+*These items can be used without instantiating an object of the class.
+Eg:
+public class Employee
+{
+    public static double bonus = 0.15;
+    public static void Increase(double newPercentage)
+{
+    bonus = newPercentage;
+}
+To Call the method,
+static void Main(string[] args)
+{
+      Employee.Increase(0.2);       //Called with the className and not necessarily an object
+}
+}
+
+The generated main method is static.
+Once defined on the class level,we can't have 
+object_name.double = 0.09; 
+To change the value,do className.static variable = 90;
+*Static methods work only with static data say:
+  double static ban = 0.09;
+  public static void Display()
+{
+   Console.WriteLine(ban);
+}
+64.WORKING WITH NULL VALUES
+Employee employee = new Employee();
+employee = null;
+//This is the same as not initializing the object.
+Nullable types include:
+int? a = 10;
+int? b = null;
+//This will imply the variable a can accept a null value.
+double? nathan,string? nathaniel.
+When you want to use the nullable variable,
+a.Value,b.Value is used.
+-double?  hourlyRate = null;
+-double? rate = null;
+hourlyRate = rate ?? 10;
+//This means if the hourlyRate is null,assign a value  of 10.
+65.Garbage Collection
+Garbage collector runs through memory for objcets to which no reference is pointing to.
+Garbage collection cleans up unused objects in memory.
+* Guid.NewGuid() creates a unique id.
+* employees.Clear();
+* employees = null;       //These are target for garbage collection.
+66.Class Library involves the Console class from which the Console.ReadLine and 
+Console.WriteLine is obtained.
+67.Record is a reference type.
+*A record can replace a class.
+-public record Account;
+-public record class Account;
+-public record struct Account;
+//Positional Records
+-public record Account(string AccountNumber);
+
+Account newAccount = new("123-456");
+*Records are used when we are passing just data that should not change after creation.
+Hence,the advantages are immutability,conciseness and value-based quality.
+Eg:
+Employee emp1 = new Employee("Bethany");
+emp1.firstName = "Gill"   //This will throw an error
+*Recall that classes are stored on a heap.
+A real world use case of this is for account numbers which are usually rarely changed.
+68.Arrays have their setbacks sorted in collections(Lists).
+*Arrays are for a fixed number whereas collections allow for flexibility.
+*Data Structure to store multiple variables of same type.The elements make use of index.
+-int[] allEmployees;
+-DateTime[] startDates;
+Instatiating an array,
+int[] allEmployeeIds = new int[4];
+*Arrays are reference types.
+*Size is set at creation and cannot be changed.
+*To get a user to set the size,
+Console.WriteLine("How many employees do you want to register?");
+int size = int.Parse(Console.ReadLine());
+int[] empId = new int[size];
+*int[] empIds = new int[4]{11,44,18,13};
+NB:Initializing elements to more than 4 will cause errors.
+Attempting to initialize elements of index 7 will generate errors.
+*If a length of 4,we'll have 0 to 3.
+*A practical use case of arrays is:
+
+Console.WriteLine("How many employee IDs do you want to register?");
+int length = int.Parse(Console.ReadLine());
+int[] empIds = new int[length];
+
+for(int i=0;i < length; i++)
+{
+Console.WriteLine("Enter the employee ID");
+int id = int.Parse(Console.ReadLine());
+empIds[i] = id;
+}
+Array.Sort(empIds);       //This rearranges the array in ascending order
+
+for(int i=0; i < empIds.length;i++)
+{
+  Console.WriteLine($"ID{i + 1} : \t{empIds[i]}");
+
+}
+69.For each loop,
+foreach(Employee e in employees)
+{
+   e.employeeDetails();
+}
+70.
+foreach(int i in empIds )
+{
+    Console.WriteLine(i);
+}
+Methods for arrays:
+(a)CopyTo()
+(b)Sort()
+(c)Reverse()
+(d)Length
+71.
+Using the other methods,
+int[] empCopy = new int[length];
+empIds.CopyTo(empCopy,0);
+Array.Reverse(empCopy);
+
+foreach(int i in empCopy )
+{
+    Console.WriteLine(i);
+}
+72.Working with Collections
+*Changing size is difficult
+*Addition and removal of elements is much easier
+Eg:
+List<int> empIds = new List<int>();
+Notice that size is not defined as size is determined dynamically.
+empIds.Add(1);
+empIds.Add(2);
+empIds.Add(3);
+
+empIds.Remove(1)
+
+foreach(int i in empIds)
+{
+   Console.WriteLine(i);
+}
+To Count the number of elements,
+int length = empIds.Count; 
+Console.WriteLine(length);
+To Insert elements at a particular position which begins below is given as ,at index 0 
+put 3.
+empa.Insert(0,3);
+73.Generics is given as List<T>
+empa.Clear();.......This is used to clear the array.
+74.OOP is basically:
+(a)Abstraction.........Low-level Implementation details is hidden
+(b)Polymorphism........Multiple forms of a method
+(c)Inheritance.........Classes can reuse functionality of other classes
+(d)Encapsulation........Containing information inside an object.(Hide internal implementation and data)
+*Procedural Programming:Functions And Logic
+*OOP:Classes And Objects
+*Classes deal with models or entities like Employees
+75.Structure Of OOP
+-Classes
+-Objects
+-Methods
+-Properties
+76.
+(A)
+*Encapsulation.....Only within a class can the value be changed
+*Encapsulation is mainly about private fields,getters and setters.
+Eg1:
+public class Employee{
+    private string firstName;
+    private int age;
+
+   public int GetAge(){
+       return age;
+}
+
+  public int SetAge(int newAge){
+       age = newAge;
+}
+
+}
+Eg2:
+  private string firstName;
+  private double? hourlyRate;
+
+ public string FirstName{
+   get{ return firstName;}
+   private set{ firstName = value;}
+}
+
+ public double? hourlyRate{
+   get{ return hourlyRate;}
+   set{ 
+if(hourlyRate < 0)
+{
+   hourlyRate = 0
+}
+else{
+ hourlyRate = value;
+}
+}
+}
+
+*Hence,when you try to access the private field via the object,it is no more possible.
+*Rather,
+  objectName.MethodNameWithGetter = "Nathan";      //Using the setter
+   string name = objectName.MethodNameWithGetter   //Using the getter
+*Using a "private set" means that only on the inside can we get the value,on the outside,
+it can't be set.
+Hence now,
+  bethany.FirstName = "Nathan"............This setter will give error
+But,
+  var name = bethany.FirstName...........The getter works as expected
+In the main method,
+*When you are "Console.WriteLining",you will return the methodName.
+(B)INHERITANCE
+-A class gets data and functionality from the parent.
+-Deals with parent(base) and derived(child) classes
+-Promotes Code Reusuability
+public class Employee
+{
+  public string name;
+  public void PerformWork()
+{
+
+}
+}
+public class Manager: Employee
+{
+    public void DisplayManagerData()
+{
+    Console.WriteLine(name);
+}
+}
+Access Modifiers: 
+*public..............Derived class can access all public members of the base class.
+       public class Employee
+{
+  public string name;
+  public void PerformWork()
+{
+
+}
+}
+public class Manager: Employee
+{
+    public void DisplayManagerData()
+{
+    Console.WriteLine(name);   //No errors here
+}
+} 
+*Like the working dynamics of "private set",so does the dynamics of "protected set" 
+play out.
+
+*private.............Members on the private class are only accessible within the parent class.
+
+{
+   private string name;
+   public void PerformWork()
+{
+
+}
+} 
+
+      public class Manager : Employee
+{
+   
+   public void DisplayData()
+{
+   Console.WriteLine(name);  //This will throw an error because of the private
+}
+}
+
+*protected..........Accessible within derived classes but if no inheritance,you can't access protected members.
+{
+   protected string name;
+   public void PerformWork()
+{
+
+}
+} 
+
+      public class Manager : Employee
+{
+   
+   public void DisplayData()
+{
+   Console.WriteLine(name);  //This will work as expected
+}
+}
+*Inheritance is basically a "IS-A" relation.In essence,a derived type IS-A base type.
+*Composition is basically a "HAS-A" relationship.
+Eg:
+-Employee HAS-A firstName,StreetName and CityName.
+77.
+*Different Forms
+(A)Method Overriding
+This is shown by use of virtual and override keywords.
+Eg:
+
+public class Employee
+{
+    public virtual void PerformWork()
+{
+
+}
+}
+To override,
+public class Manager : Employee
+{
+    public override void PerformWork()
+{
+
+}
+}
+If the object is of Employe,the PerformWork() of Employee will be called however
+if a Manager object,C# notices that it has it's own implementation of PerformWork()
+so that is what is called.
+(B)Method Overloading is also Polymorphism where same name but different parameters.
+78.Abstraction via Interfaces.
+Method Signature with no implementation.
+public interface IEmployee
+{
+   void PerformWork();
+   int ReceiveWage();
+}
+To implement the interface,
+public void Manager : IEmployee
+{
+    void PerformWork(){
+.................
+}
+   int ReceiveWage(){
+................
+}
+}
+They cannot be instantiated i.e
+IEmployee e1 = new Manager();         //This will work
+79.More code written,higher chances of error.
+*Debugger is used to test code.
+*Unit Test is small piece of logic code to test a large piece.
+*Debugging is to find errors in code.
+*Using the debugger involves:
+(a)Run code in debug mode
+(b)Breakpoints in code
+(c)Stepping through code line by line
+*Writing Unit Tests are not necessary but only make a Dev confident about their code.
+80.Sample Unit Test is:
+public class EmployeeTests
+{
+    public void PerfomWork()
+{
+       //Arrange
+       Employee employee = new Employee(...);
+       //Act
+        Employee.PerformWork();
+      //Assert
+         Assert.Equal(1,employee.NumberOfHoursWorked);
+   
+}
+
+}
+81.
+*Working With Files and Directories is ensured by the System.IO namespace.
+Eg:
+   -System.IO.Directory
+*Create Directory
+*Check if directory exist
+*Delete directory
+   -System.IO.File
+*Move(source,destination)
+*Copy(source,destination)
+*Checks if a file exists.......Exist(path)
+*Deletes a file if it exists...Delete(path)
+*This reads all contents of a file...............ReadAllText(path)
+*This sends a string to a file...................WriteAllText(path,text)
+82.Deleting  A File From A Particular Location,
+string path = @"C:\Users\ACER\Desktop\CSharpPractice\nat.txt";
+
+if(File.Exists(path))
+{
+     File.Delete(path);
+}
+
+Console.WriteLine("File Deleted!"); 
+*!............This denotes negation
+*Delimiter is a colon or comma or any symbol that splits a text.
+83.FileStream is used for text and binary files.
+*Stream is a flow of data from one location to another.
+*IS keyword is used to check if objects are of a certain type.
+84.Handling Exceptions is a way of preventing an application from crashing 
+by catching possible errors.
+*This is achieved by the try,catch and finally block.
+-Examples of Exceptions
+(a)Divide By Zero
+try
+{
+     string input = Console.ReadLine();
+     int a = int.Parse(input);
+}catch(DivideByZeroException ex)
+{
+       Console.WriteLine("Cannot Divide Ny Zero"); 
+       
+}
+(b)File Not Accessible
+(c)Incorrect Permissions
+(d)Database Unreachable
+(e)IndexOutOfRange Exception
+
+try
+{
+     string input = Console.ReadLine();
+     int a = int.Parse(input);
+}catch(FormatException ex)
+{
+       Console.WriteLine("Enter an integer number"); 
+       throw;
+}
+
+85.Console.ForegroundColor = ConsoleColor.Green;.......This makes the console color that green as specified
+Inspecting Exception Details:
+try
+{
+     string input = Console.ReadLine();
+     int a = int.Parse(input);
+}catch(FormatException ex)
+{
+       Console.WriteLine(ex.Message);         //This shows the error
+       Console.WriteLine(ex.StackTrace);      //This shows where error occurs 
+}
+There can be multiple catch blocks at once where C# will check for which applies.
+try
+{
+     string input = Console.ReadLine();
+     int a = int.Parse(input);
+}catch(FormatException ex)
+{
+       Console.WriteLine(ex.Message);         //This shows the error
+       Console.WriteLine(ex.StackTrace);      //This shows where error occurs 
+}catch(DivideByZeroException ex)
+{
+       Console.WriteLine("Cannot Divide Ny Zero"); 
+       
+}
+*Finally block executes all code in there whether all went fine or not.
+try
+{
+     string input = Console.ReadLine();
+     int a = int.Parse(input);
+}catch(FormatException ex)
+{
+       Console.WriteLine(ex.Message);         //This shows the error
+       Console.WriteLine(ex.StackTrace);      //This shows where error occurs 
+}finally{
+   //Code that always executes
+}
+
+Console.ResetColor();.............This sets the color to the default of white
+86.
+NEXT STEPS:+
+-Object Oriented System
+-Databases
+(ADO.NET or Entity Framework Core/EF Core)  are used in C#
+-LINQ.........Language Integrated Query
+-Async Coding
+*Used when working with file access and external API access.
+*This uses async/await pattern
+FOR APPLICATION DEVELOPMENT,
+1.Desktop Applications:Frameworks for building modern UI for windows.
+-WinForms Development/WPF(Windows Presentation Foundation)
+2.Web Development
+-ASP.NET Core 
+Eg MVC and Razor Pages(Server-side tecnologies to create pages to render pages on server using C# code) and 
+Blazor(used to write C# to execute in the browser) are used for modern UIs.
+3. APIs
+ASP.NET Core can be used.
+4.Mobile App Development(for IOS and Android)
+-Xamarin
+-Maui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

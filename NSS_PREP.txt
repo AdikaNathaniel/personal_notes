@@ -758,7 +758,15 @@ These five principles are associated with Object Oriented Programming.
 *Abstraction deal with interfaces and abstract classes.
 Hence,high-level classes should depend on abstractions.
 
-Recap at Infragistics(YouTube Channel on Solid)                          
+Recap at Infragistics(YouTube Channel on Solid)   
+
+              OBJECT-ORIENTED PROGRAMMING
+TYPES:
+(A)Single Inheritance................The normal base and derived class
+(B)Multi-level Inheritance...........One class inheriting from another in levels
+(C)Hierarchical Inheritance.........All derived classes inheriting from one base class like a King
+(D)Multiple Inheritance............One derived class inheriting from multiple base classes.
+                      
 
 
 
