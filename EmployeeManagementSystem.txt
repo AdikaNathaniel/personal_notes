@@ -1,0 +1,5 @@
+1.Entities hold the database models and DTOs are the user models.
+-Hence,to communicate information to the user,we'll use the DTOs but when we want to communicate
+to database,we'll use the Entities.
+2.All entities inherit from Base Entity because each of them has an Id and a Name.
+3.The creation of classes symbolizes Object Oriented Programming.

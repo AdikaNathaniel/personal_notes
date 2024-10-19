@@ -341,6 +341,32 @@ members.
 --Tracking projcet progress
 --Control potential hazards
 --Taking notes of areas for improvement
+               WHAT ARE APIs?
+1.API(Application Programming Interface) is a way for different systems or applications
+to communicate with each other.
+2.APIs are interfaces for communication between client and server.
+Eg Web API return responses as json or xml.
+-A request and response cycle is an API call.
+3.REST(Representational State Transfer) APIs are used for building Web APIs.
+-POST(Create a new resource)...........C
+-GET (Read data about some resource)...R
+-PUT(Update an existing resource)......U
+-DELETE(Remove an existing resource)...D
+Hence,CRUD operations deal with REST APIs.
+-Status codes as defined below,
+*200..........Success
+*400..........Something wrong with request(client level) say 404 i.e page not found
+*500..........Something wrond at the server level say service unavailable
+-REST is stateless i.e the two parties which are server and client need store information
+about each other.Moreso,it implies all requests and responses are independent of each other.
+-If the response is large,pagination is usually used.
+-Even APIs do REST API Versioning
+Eg: /v1/products
+/v2/products.............where products is the resource    
+Other API options are GraphQL and gRPC.
+
+
+
  
 
 
