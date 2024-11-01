@@ -364,9 +364,15 @@ about each other.Moreso,it implies all requests and responses are independent of
 Eg: /v1/products
 /v2/products.............where products is the resource    
 Other API options are GraphQL and gRPC.
-
-
-
+               CREATING SPACE ON A PC
+1.Type Run in the start menu
+-%TEMP%
+-prefetch
+For both Ctrl + A, delete all.
+2.Disk CleanUp and select to delete all files
+3.Open TaskManager,go to startup and disable all programs that startup with a pc
+with the exception of those with a publisher of Microsoft Corporation.
+4.Run to type "msconfig".Go to services and select "Hide all
  
 
 

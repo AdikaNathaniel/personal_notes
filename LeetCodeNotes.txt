@@ -1,0 +1,99 @@
+1.Two Sum
+Given an array of integers with indexes of two numbers such that they add up to a specific target.
+You may assume that each input will have exactly one solution  and you may noy use the same element
+twice.
+You can return the answer in any order.
+Eg 
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+     SOLUTION
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+           for(int i=0;i < nums.Length;i++){
+    for(int j=i+1;j< nums.Length;j++){
+             if(nums[i] + nums[j] == target)
+{
+
+          return new int[](i,j);  
+}
+}
+}
+   throw new Exception("Not found");
+    }
+}
+
+For a better runtime,
+public class Solution {
+    public int[] TwoSum(int[] nums, int target)
+{
+  Dictionary<int,int> hashTable = new   Dictionary<int,int>();
+  for(int i=0;i < nums.Length;i++)
+{ 
+   int complement = target - nums[i];
+   if(hashTable.ContainsKey(complement))
+{
+  return new int[](hashTable[complement],i);
+}else
+{
+     hashTable[nums[i]] = i;..................................where i=2,nums[2]=2;
+}
+}
+   throw new Exception("Not found");
+}
+}
+                                                    NOTES
+a.int[] nums ={1,2,3,4,5};
+    for(int i=0;i < nums.Legth;i++){
+  for(int j=i+1;j < nums.Legth;j++){
+     
+}    
+}
+This will output (1,2),(1,3),(1,4),(1,5),(2,3),(2,4),(2,5)....
+b.Dictionary holds a key-value pair hence; hashTable.Add(1,20)
+              TRIAL CODE
+(1)
+Console.WriteLine("Enter a number");
+int num = int.Parse(Console.ReadLine());
+
+if(num % 3 == 0)
+{
+    Console.WriteLine("fizz");
+}else if(num % 5 == 0)
+{
+    Console.WriteLine("Buzz");
+}else if(num % 3 == 0 && num % 5 == 0)
+{
+    Console.WriteLine("fizzBuzz");
+}else if(num % 3 != 0 && num % 5 != 0)
+{
+    Console.WriteLine(num);
+}
+(2)
+Checking if a number is not in the first array.
+int[] nums = {2,3,4};
+int[] num1 = {5,6,7};
+
+int[] result = GetUniqueNumbers(nums,num1);
+
+static int[] GetUniqueNumbers(int[] nums,int[] num1)
+{
+    List<int> unique = new List<int>();
+
+  for(int i=0;i< nums.Length;i++)
+{
+    bool found = false;
+  for(int j=0;j<num1.Length;j++)
+{
+     if(nums[i] == nums[j]) 
+ { 
+found = true;
+    break;
+}
+}
+if(!found) 
+{
+   unique.Add(nums[i]);
+}
+
+}

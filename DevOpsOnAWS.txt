@@ -1,0 +1,234 @@
+1.AWS is a cloud provider.
+2.AWS Continous Delivery Tools/Code Suite/Developer Tools:
+(a)Code	Deploy(serverless service)
+-It is free within AWS.
+-Each member of the team can be allowed access to a pipeline to see deployments.
+-Runs on Linux and Windows.
+(b)CodeBuild
+(c)CodePipeline
+3.Pipelines are used to release application updates.
+4.Continuous Delivery is an essential component of DevOps.
+Teams that use this can deploy multiple times in  a day.
+Continous Delivery deals with:
+-Automated deployment(repeatable and small change sizes)
+5.CodeDeploy Components
+-Application(Core Component)
+-Deployment Group(target for your deployment)
+*The environment to be deployed into say staging or production.
+-Deployment
+*The strategy and process of rolling  out an app revision to a deployment group.4
+*Each deployment has a specific deployment id.
+6.Components of a CodeDeploy Application
+-A unique name(an identifier that is inside an AWS account)
+-Compute Platform(EC2/On-premises,AWS Lambda,Amazon ECS)
+7.Deployment Groups
+-For EC2/On-premises
+*Autoscaling groups
+-For AWS Lambda
+*Lambda function name
+-For Amazon ECS
+*ECS cluster
+*ECS service
+*Load balancer 
+*Target groups(2)
+8.One deployment per a deployment group.
+*Deployment Type are:
+(a)In Place.....A new revision is placed on top of an old version hence the old version
+no longer exists.
+(b)Blue-Green....Containers will be created to hold new instances of an app revision.
+Hence,older versions are still avaialable.
+*Deployment Configuration is a deployment strategy of "All At Once","One At A Time","Percentage-wise".
+AWS gives multiple deployment configurations to choose but one may create a custom one.
+*Revision
+This refers to the version of the app being rolled out at the moment.
+For EC2/On-premises,
+(a)A revision can be a Github repository and a commit ID or a zip file in an S3 bucket.
+For Lambda,
+(a)A revision has an appspec file with
+-A function name
+-Function alias
+-Version Info
+For ECS,
+(a)A revision has an appspec file with
+-A Task Definition version
+-Container name
+-Container port
+9.AppSec file is yaml file of appspec.yml.
+-It is kept at the root of a revision.Hence,if a github file,the yaml file is at the
+root of the github repository.
+Eg:
+version : 0.0
+os: linux
+files:
+  -source : /src
+   destination : /var/www/html
+hooks:
+   BeforeInstall:
+     -location:scripts/before_install.sh
+      timeout:300
+      runas: root
+Hence,the shell file(.sh) is installed before the new version is installed.This version
+must be in the root directory of the app version.
+10.A CI System is responsible for:
+-Software Licensing
+-CI Software upgrades
+-Underlying host management
+-Agent Configuration
+Hence;CodeDeploy,CodeBuild and CodePipeline are used together for CI/CD.
+11.Continous Integration  is the process by which all developers on a team
+make frequent small commits by pushing to a shared repository at least once a day.
+Hence,integration of changes to prevent merge conflicts.
+-CI Server do static code analysis by checking syntax.
+-CI Server compile code.
+-CI Server run tests on code.
+-CI Server catches and fixes problems quicker.
+12.CI is usually done with CodeBuild.However,other alternatives include:
+-Jenkins...........Can be integrated with CodeBuild
+-GitLab
+-TeamCity
+-Travis..........free for open source projects
+-Bamboo..........A commercial CI System offered by Atlassian
+-CircleCI.......A commercial CI System
+13.Benefits of CodeBuild
+-Runs Builds
+-Elastic Scaling.........Supports one or multiple builds
+-For Commercial use,CodeBuild uses PayAsYouGo agreements(pay for build time used).
+-Has AWS Integrations
+-Static Code Analysis
+-Code Compilation
+-Run tests
+-Publish artifacts and docker containers
+-Send notifications to Devs on a team
+14.CodeBuild Components
+-Build Project.........Definition of the project
+*Build history....whether success or failed
+*Build details
+*Build Triggers.....scheduling builds to kick off hourly or daily.
+*Metrics............Number of run builds,duration of build and number of failed or succeeded.
+-Build/Build run........Used to execute a project
+*Phase details.......This shows which part of code is making the code fail.
+*Build runs run in a serverless container environment.
+15.First phase of a build downloads code from a GitHub repo or S3.
+-Succeded build is published to an artifact store.
+16.Code build deals with a build spec yaml file of buildspec.yml.
+The file defines its build process and phases.
+Eg:
+  version : 0.2
+  env:
+    variables:
+        key:"value"
+        parameter-store:
+        key:"value"
+  phases:
+    build:
+      commands:
+        -compile commands
+        -test commands
+ artifcats:
+     files: 
+       -target/messageUtil-1.0.jar
+17.Testing Tools(frameworks)
+-Python: pytest
+-Java : JUnit
+-Ruby: RSpec
+- .NET: XUnit
+-Golang: Built in
+-PHP : PHPUnit
+18.OAuth is used to connect GitHub to AWS CodeBuild.
+
+ 
+ 
+
+Phases:
+-Install
+-Pre_Build
+-Build
+-Post_Build
+19.AWS CodePipeline is used to automate software releases.
+Hence,
+-CodeBuild:To build a project 
+-CodePipeline:Automate software releases
+-CodeDeploy:Release a project into staging or production
+*AWS CodePipeline is used to define various stages of code release in
+one place. 
+*AWS CodePipeline is used to to visualize code flow from source to production.
+*Code Pipeline helps orchestrate building,testing and approval of an update to an app.
+*Pipelines execution can be monitored.
+*Pipeline defines an entire release process.Every pipeline must have a minimum of 
+two stages.
+*Prerequisites for using codepipeline are:
+-AWS Account
+-IAM Credentials
+Flow:
+-Source Code eg from GitHub
+-Build process
+20.Benefits of CodePipeline
+-No servers to configure
+-Pay Only for active pipelines
+21.CodePipeline Components
+-Pipeline: A definition of software release process.Components of a pipeline include:
+*Stages
+*Transitons....Connection b/n stages
+*Artifacts:Input/Output artifacts
+-Execution: Invocation of a defined pipeline
+22.A pipeline stage has:
+-Action group with actions in it.Actions of same runOrder say,
+runOrder of 1 or runOrder of 2 belong to the same Action Group.
+23.VISUALIZING A PIPELINE
+(A)SOURCE STAGE
+-An action group of GITHUB ACTION
+*There's a transition.
+(B)BUILD STAGE
+-An action group of CodeBuild ACTION
+*There's a transition.
+(C)DEPLOY STAGE
+-An action group of CodeDeploy ACTION
+*There's can be a transtion back to source.
+24.Action  Types:
+*Source Action:This is where the source code lives.
+*Build Action: Uses Jenkins or CodeBuild
+*Test Actions: Testing frameworks are used here.
+*Deploy Action: Code Deploy is used here.
+*Approval Action
+*Invoke Action
+25.Pipeline Execution Monitoring:
+This can be done by:
+-CodeDeploy Triggers
+*By publishing to an SNS topic when a deployment event occurs.
+This allows for notification via email when a build fails or succeeds.
+-CloudWatch Events
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,252 @@
+1.OOP comprises
+-Polymorphism
+*Different forms of methods.
+public class Car
+{
+    public virtual void Drive()
+{
+}
+}
+
+public class ElectricCar : Car
+{
+    public override void Drive()
+{
+      base.Drive();
+}
+
+}
+*Done using the virtual and override keyword.
+-Encapsulation
+*Only some information is exposed and restricts access.
+*Uses access modifiers.
+ private int id;
+public int Id
+{
+    get { return id;}
+    set {
+if(id > 0) 
+ id = value;
+}
+}
+-Abstraction
+*Only necessary details are shown but implemenation are hidden.
+*This reduces complexity and increases security.
+-Inheritance
+*Taking features from one class to another
+*Uses Is-A relation.
+2.OOP is to model the real-world.
+C# is by Microsoft.
+3.Benefits of OOP
+-Makes Code reusable and easier to maintain
+-Helps break down a large problem to a small one
+*Python,Ruby,JavaScript are OOP langguages.
+4.Type safety implies one a variable has a type,it's type cannot be chnaged.
+5.OOP Properties
+-Classes
+-Objects
+-Methods
+-Properties
+-Interfaces
+6.Class is a blueprint of an object and an object is an instance of a class.
+-fields are variables in a class
+7.
+ private string firstName;
+public string FirstName
+{
+    get { return firstName;}
+    set {  firstName = value;}
+}
+8.Classes contain members.
+-Constructors are default created.It is invoked when an object is created.
+-Constructors cannot have a return type.
+Employee employee = new Employee();
+employee.PerformWork();
+employee.firstNaem = "Gill";
+CTS............Common Type System
+9.Types in CTS
+-Class
+-Enumeration........allow to give names to constants.
+They are value types.
+-Struct...........Lightweight classes which are value types.
+-Interface
+-Delegates...They are used to pass  methods as parameters to other methods.
+-Record
+10.To build an app,first gather the requirements.
+-Give a name of the app
+-Who will be using the app?
+-How you want the app to work?
+-What is the purpose of the app?
+-Get the entities from the requirements.
+*Requirements change as we go
+-Get the variables and methods(functionalities) for each class
+-You'll need a class Diagram.
+11.Access Modifier
+-Public
+-Internal...............This is the default and is usually public for an assembly
+-Protected...............Mostly for inheritance
+-Private
+12.Field is an instance variable.
+13.
+public classs Product
+{
+   private string name;
+
+public string GetName()
+{
+     return name;
+}
+
+public void SetName(string n)
+{
+      name = n;
+}
+
+} 
+14.[..50].....................Take all characters in the range of 50 
+Eg
+public string? description
+{
+    get { return description;}
+
+    set{
+         if(value == null)
+{
+        description = string.Empty;
+}else
+{
+     description = value.Length > 250 ? value[..250] : value;
+}
+
+    }
+}
+15.Default constructor don't contain any members.
+16.Method Overloading
+public  void IncreaseStock()
+{
+    AmountInStock++;
+}
+
+public  void IncreaseStock(int amount)
+{
+    
+}
+Constructor Overloading
+public Product(int id) : this(id,string.Empty)
+{
+}
+//This implies the name is an empty string.
+public Product(int id,string name)
+{
+   Id = id;
+   Name = name;
+}
+*Hence when the method has the same name as a class,then it's constructor overloading.
+17.This keyword points to an object's field.
+
+public Prouct(int id,string name)
+{
+   this.name = name;
+   this.id = id;
+}
+18.Primary Constructors
+ public class Product(int id,string name)
+{
+    public Product(int id,string name,decimal price) : this(id,name)
+{
+
+}.............The constructor with the this keyword is the primary constructor
+}
+19.Composition.......(HAS-A Relationship)
+-A property of Price is inside a class of Product.
+-Composition creates association of objects of different classes.
+20.In as scenario where there's one class and both Devs have to work on different parts of 
+it,
+-Create a new class with a different name say ProductPart
+    public partial class Product
+{
+
+}
+-Add partial keyword to both classes.
+    public partial class Product
+{
+
+}
+21.
+int id = new Random().Next(9999);............This means the Id must be a random number less than 9999.
+22.Classes will be tested using objects.
+-Primitive types are created on Stack
+-Objects are created on the heap.
+Product product = new Product();
+Product product = new Product(123,"Eggs" );
+Product product = new();
+23.var deals with implicit typing
+24.
+public class Product
+{
+    public int Id { get; set;}
+   public string Name { get; set;}
+
+  public Product()
+{
+
+}
+}
+Product p = new Product() { Name = "Eggs",Id = 123};
+This idea is used because no parameters are passed to the constructor.
+25.Static deals with the class hence,all objects of that class have access to that 
+particular static variable.When one object changes it,it is changed for all.
+-static is for methods and variables.
+To call a static variable or method,use the class name to call it.
+Product.StockThreshold = 10;
+Product.ChangeStock(10);
+-Only static variables can be used in a static method.
+26.LINQ is used to search through a list.
+27.
+private string directory = @"D:\data\Bethany\";
+private string productFileName = "products.txt";
+28.Unit test is code to test other code.
+-Usually tests a small portion of a code/methods.
+       ADVANTAGES OF UNIT TESTS
+-Finds bugs
+-Improve code quality
+29.Structure of Unit Tests
+-Arrange
+-Act
+-Assert
+   public void Increase_Correction
+{
+   //Arrange
+Product product = new Product();
+   //Act...............This invokes a method to be called
+product.IncreaseStock(10);
+    //Assert
+Assert.Equal(100,product.AmountInStock);
+Usually created as XUnit test project in Visual Studio.
+30.Inheritance "Is-A" relation.
+-Inheritance prevents code duplication.
+*Public
+*Private
+*Protected........methods or variables are available to a child class only
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

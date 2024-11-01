@@ -1,0 +1,19 @@
+*This project is a blazor web app with Server-Side Render Mode.
+*This app is built using clean architecture.
+*This contains application(DTOs and Services consuiming the domain),domain(Core),infrastructure(Consumes application and Database will be here) and WebUI(presentation layer).
+Part One(Netcode-Hub) is a description of the project.
+                   APP FEATURES
+*CRUD operations and track activity of all users.Policies include user,manager and administrator.
+*User is the shop OR smaller shops used to request or order items from warehouse which we are creating.
+*Warehouse delivers the items.
+User can make a request or cancel the order.
+*Records will be available for admin to see what is going on.
+*Much as a user can request or cancel an order,so can and admin do so and even edit an 
+order.
+*When an order is made,there must be real-time communication between a client(shops) and an admin(warehouse),
+this is done using SignalR.
+
+
+
+
+

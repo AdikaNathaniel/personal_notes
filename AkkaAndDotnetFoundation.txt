@@ -1,0 +1,12 @@
+*Akka.Net is a framework for C#.
+*Every actor needs an input hence the message.(a means of communication)
+*Kafka is almost same as RabbitMQ.
+*Producer produces data into Kafka and Consumer receives data or an event.
+*Topic is a description of the data or event sent.
+*Akka.NET and Kafka is used for 
+-Payment Processing
+-Order Tracking
+-Real-time Analytics
+*Tuples are immutable.
+*Akka stream makes it easy to handle back pressure.
+

@@ -1,0 +1,116 @@
+-C# 12 and .NET 9 are out
+-At 2001,C++ and Java were most common.
+-C# improves C++ and Java features.It is hence in the C language domain.
+-C# is strongly typed and statically typed.
+This helps catch programming errors.
+Hence int,boolean must be declared.var keyword also potrays this.
+Eg:
+   for(var n=0;n<args.length;n++){
+
+}
+To get the type of n,do:
+-n.GetType().FullName
+Output:System.Int32
+*This is mostlt adopted in Generics.
+*Safety is ensured by IndexOutOfRangeException where
+   for(var n=0;n< 4;n++){
+   
+}
+such that only three elements are available to be looped,an
+exception is thrown.
+- 
+var numbers = new int[]{1,2,3,4,5};
+var type = numbers.GetType();
+System.WriteLine(type.FullName);
+
+Output is: System.Int32[]
+*An array of 32-type integers.
+-LINQ is Language Integrated Query.
+Eg is 
+-using System.Linq;
+*C#  is procedural and object-oriented.
+1.Compiled languages are strong and static typed and have fast performance whereas
+Interpreted langugae is lose/dynamic type.
+2.C# is a managed type in that
+-Strong typed
+-Runtime Safety
+-Garbage collection
+-Native code performance
+*File after compile-time is Assembly(.DLL/.exe) format.
+3.CLR(Common Language Runtime) is the execution engine.It does:
+-JIT(Just-In-Time) Compilation
+-RunTime Safety
+-Garbage Collection
+SOS:Son Of Strike
+4.The CLRs are .NET8(cross-platform) and .NET Framework(for only windows).
+-It is advised that C# projects will target the .NET.
+5.Base Class Libraries allow to work with Lists and all other data types.
+-Works with C#,F# and VisualBasic.
+Skills in one are transferrable since all use a Common Type System of JIT Compiler.
+*F# is mostly for computation.
+6.C# came in 2001.
+ var numbers = new int[]{1,2,3,4,5};
+          var type = numbers.GetType();
+
+          System.WriteLine(type.FullName);
+7.String Interpolation is:
+($"......{n}");
+8.These are expression-bodied members or lambda expressions.
+public class Point
+{
+   public required int X { get; init;}
+   public required int Y { get; init;}
+
+  public override string ToString() => $"({X},{Y})";
+}
+9.Collection Spread Operator:
+string[] twoStooges = ["Moe","Larry"];
+string[] moreStooges = ["Moer","Larrys"];
+string[] fourStooges = [..twoStooges,..moreStooges ];
+
+foreach(var s in fourStooges)
+{
+    Console.WriteLine(s);
+}
+Output is:
+Moe
+Larry
+Moer
+Larrys
+NB:
+-1946 TO 1964.....BabyBoomer
+-1965 TO 1980.....GenX
+-1981 TO 1996.....Millenial
+-1997 TO 2012.....GenZ
+-2013 TO 2024.....GenAlpha
+-2024 upwards.....GenBeta
+10.Additional resources
+-Documentation of CSharp
+-Documentation of Dotnet Core
+10.
+enum Generation { BabyBoomer,GenX,Millenial,GenZ,GenAlpha,GenBeta}
+
+class Person{
+    public required int BirthYear { get; init; }
+
+    public Generation Generation => BirthYear switch{
+         (>= 1946) and (<= 1964) => Generation.BabyBoomer,
+         (>= 1965) and (<= 1980) => Generation.GenX,
+         (>= 1981) and (<= 1996) => Generation.Millenial,
+         (>= 1997) and (<= 2012) => Generation.GenZ,
+         (>= 2013) and (<= 2024) => Generation.GenAlpha,
+         _ => Generation.GenBeta
+};
+}
+
+
+
+
+
+
+
+
+
+
+
+
